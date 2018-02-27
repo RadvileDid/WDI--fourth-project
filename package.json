@@ -6,10 +6,12 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn build && node index",
-    "start:client": "webpack-dev-server",
-    "start:server": "nodemon",
     "build": "webpack -p",
-    "seed": "node db/seeds"
+    "seed": "node db/seeds",
+    "start:client": "webpack-dev-server",
+    "test:client": "nyc --reporter=text --reporter=html mocha test/client/helper.js \"test/client/**/*.js\" --exit",
+    "start:server": "nodemon",
+    "test:server": "nyc --reporter=text --reporter=html mocha test/api/**/*.js --exit"
   },
   "dependencies": {
     "axios": "^0.16.2",
