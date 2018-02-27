@@ -13,6 +13,9 @@
     "start:server": "nodemon",
     "test:server": "nyc --reporter=text --reporter=html mocha test/api/**/*.js --exit"
   },
+  "engines": {
+    "node": "9.x.x"
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "bcrypt": "^1.0.3",
