@@ -7,7 +7,6 @@ class VideosNew extends Component {
     state = {
       video: {
         title: '',
-        // danceStyle: '',
         videoId: ''
       },
       errors: {}

@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Video = require('../models/video');
 
 function usersShowRoute(req, res, next) {
   User
@@ -6,7 +7,13 @@ function usersShowRoute(req, res, next) {
     .exec()
     .then(user => {
       if (!user) return res.notFound();
-      return res.status(200).json(user);
+
+      Video
+        .find({ createdBy: user.id })
+        .exec()
+        .then(videos => {
+          return res.status(200).json({ user, videos });
+        });
     })
     .catch(next);
 }

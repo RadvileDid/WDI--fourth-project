@@ -13,7 +13,8 @@ router.route('/videos')
 
 router.route('/videos/:id')
   .get(videos.show)
-  .delete(videos.delete);
+  .delete(videos.delete)
+  .post(videos.upvote);
 
 // << auth >>
 router.route('/register')

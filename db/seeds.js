@@ -52,136 +52,136 @@ User
     return Video
       .create([{
         title: 'BBO | QUAREN\'S BRIDGE',
-        danceStyle: 'Locking',
-        videoId: 'https://www.youtube.com/embed/j7hmwrov9ag',
-        createdBy: users[0]._id,
+        danceStyle: ['Locking'],
+        videoId: 'https://www.youtube.com/watch?time_continue=1&v=j7hmwrov9ag',
+        createdBy: users[0],
         upvotes: [
           {
-            createdBy: users[1]._id
+            createdBy: users[1]
           },
           {
-            createdBy: users[2]._id
+            createdBy: users[2]
           },
           {
-            createdBy: users[3]._id
+            createdBy: users[3]
           },
           {
-            createdBy: users[4]._id
+            createdBy: users[4]
           }
         ]
       },
       {
         title: 'Hazell Dean - Searchin\' | IBUKI choreography | Prepix Dance Studio',
-        danceStyle: 'Wacking',
-        videoId: 'https://www.youtube.com/embed/7crqVBN110Y',
-        createdBy: users[0]._id,
+        danceStyle: ['Wacking'],
+        videoId: 'https://www.youtube.com/watch?v=7crqVBN110Y',
+        createdBy: users[0],
         upvotes: [
           {
-            createdBy: users[1]._id
+            createdBy: users[1]
           },
           {
-            createdBy: users[2]._id
+            createdBy: users[2]
           }
         ]
       },
       {
         title: 'MADD CHADD | MECHANICAL MONDAY | KANO - IM READY',
-        danceStyle: 'Popping',
-        videoId: 'https://www.youtube.com/embed/MXyOjDp5CwQ',
-        createdBy: users[0]._id,
+        danceStyle: ['Popping'],
+        videoId: 'https://www.youtube.com/watch?time_continue=1&v=MXyOjDp5CwQ',
+        createdBy: users[0],
         upvotes: [
           {
-            createdBy: users[3]._id
+            createdBy: users[3]
           },
           {
-            createdBy: users[4]._id
+            createdBy: users[4]
           }
         ]
       },
       {
         title: 'Chris Brown "TO MY BED" | Duc Anh Tran x Daniel Fekete Choreography',
-        danceStyle: 'locking',
-        videoId: 'https://www.youtube.com/embed/hoCO2iaSu58',
-        createdBy: users[1]._id,
+        danceStyle: ['Locking'],
+        videoId: 'https://www.youtube.com/watch?time_continue=1&v=hoCO2iaSu58',
+        createdBy: users[1],
         upvotes: [
           {
-            createdBy: users[2]._id
+            createdBy: users[2]
           },
           {
-            createdBy: users[3]._id
+            createdBy: users[3]
           },
           {
-            createdBy: users[4]._id
+            createdBy: users[4]
           }
         ]
       },
       {
         title: 'THE KINJAZ "Heritage" (CloZee Remix)',
-        danceStyle: 'Wacking',
-        videoId: 'https://www.youtube.com/embed/InxSxDDBhe8',
-        createdBy: users[1]._id,
+        danceStyle: ['Wacking'],
+        videoId: 'https://www.youtube.com/watch?time_continue=1&v=InxSxDDBhe8',
+        createdBy: users[1],
         upvotes: [
           {
-            createdBy: users[3]._id
+            createdBy: users[3]
           },
           {
-            createdBy: users[4]._id
+            createdBy: users[4]
           }
         ]
       },
       {
         title: 'SLIPS & SLURS | DUBSTEP',
-        danceStyle: 'Popping',
-        videoId: 'https://www.youtube.com/embed/qLgR4dZ4WXk',
-        createdBy: users[1]._id,
+        danceStyle: ['Popping'],
+        videoId: 'https://www.youtube.com/watch?time_continue=1&v=qLgR4dZ4WXk',
+        createdBy: users[1],
         upvotes: [
           {
-            createdBy: users[2]._id
+            createdBy: users[2]
           },
           {
-            createdBy: users[4]._id
+            createdBy: users[4]
           }
         ]
       },
       {
         title: 'Finesse - Bruno Mars ft. Cardi B / May J Lee X Austin Pak Choreography',
-        danceStyle: 'locking',
-        videoId: 'https://www.youtube.com/embed/PeQ4y-E8xj4',
-        createdBy: users[2]._id,
+        danceStyle: ['Popping', 'Locking'],
+        videoId: 'https://www.youtube.com/watch?time_continue=1&v=PeQ4y-E8xj4',
+        createdBy: users[2],
         upvotes: [
           {
-            createdBy: users[3]._id
+            createdBy: users[3]
           },
           {
-            createdBy: users[4]._id
+            createdBy: users[4]
           }
         ]
       },
       {
         title: 'Sorority @ Auckland Regionals 2017',
-        danceStyle: 'Wacking',
-        videoId: 'https://www.youtube.com/embed/3SOIXxHzrf0',
-        createdBy: users[2]._id,
+        danceStyle: ['Wacking'],
+        videoId: 'https://www.youtube.com/watch?time_continue=1&v=3SOIXxHzrf0',
+        createdBy: users[2],
         upvotes: [
           {
-            createdBy: users[1]._id
+            createdBy: users[1]
           },
           {
-            createdBy: users[3]._id
+            createdBy: users[3]
           },
           {
-            createdBy: users[4]._id
+            createdBy: users[4]
           }
         ]
       },
       {
         title: 'A$AP Ferg - Plain Jane : Gangdrea Choreography',
-        danceStyle: 'Popping',
-        videoId: 'https://www.youtube.com/embed/8BuGdgJ9Pig',
-        createdBy: users[2]._id,
+        danceStyle: ['Popping', 'Locking'],
+        videoId: 'https://www.youtube.com/watch?time_continue=1&v=sE8E0CxQg5g',
+        createdBy: users[2],
         upvotes: [
           {
-            createdBy: users[1]._id
+            createdBy: users[1]
           }
         ]
       }]);

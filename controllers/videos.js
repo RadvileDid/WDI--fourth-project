@@ -3,7 +3,7 @@ const Video = require('../models/video');
 function videosIndex(req, res, next) {
   Video
     .find()
-    .populate('upvotes.createdBy')
+    .populate('upvotes.createdBy createdBy')
     .exec()
     .then(videos => res.json(videos))
     .catch(next);
@@ -35,9 +35,25 @@ function videosShow(req, res, next) {
     .catch(next);
 }
 
+function upvoteRoute(req, res, next) {
+  // req.body.createdBy = req.user;
+
+  Video
+    .findById(req.params.id)
+    .exec()
+    .then((video) => {
+      if(!video) return res.notFound();
+      video.upvotes.push(req.currentUser.id);
+      return video.save();
+    })
+    .then(video => res.json(video))
+    .catch(next);
+}
+
 module.exports = {
   index: videosIndex,
   create: videosCreate,
   delete: videosDelete,
-  show: videosShow
+  show: videosShow,
+  upvote: upvoteRoute
 };

@@ -9,6 +9,12 @@ const userSchema = new mongoose.Schema({
   profilePicture: { type: String, required: 'Please provide a profile picture'}
 });
 
+userSchema.virtual('videos', {
+  ref: 'Video',
+  localField: '_id',
+  foreignField: 'createdBy'
+});
+
 userSchema.set('toJSON', {
   getters: true,
   virtuals: true,

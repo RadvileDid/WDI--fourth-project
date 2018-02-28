@@ -14,13 +14,13 @@ const videoSchema = new mongoose.Schema({
   title: { type: String},
   danceStyle: { type: Array },
   videoId: { type: String },
-  createdBy: {type: mongoose.Schema.ObjectId, ref: 'User'},
+  createdBy: {type: mongoose.Schema.ObjectId, ref: 'User', required: true},
   upvotes: [ upvoteSchema ]
 });
 
 videoSchema.pre('save', function splitUrl(next){
   if(this.isModified('videoId')) {
-    this.videoId = this.videoId.match(/[a-zA-Z0-9_-]{11}/);
+    this.videoId = this.videoId.split('v=')[1].substring(0, 11);
   }
   next();
 });
