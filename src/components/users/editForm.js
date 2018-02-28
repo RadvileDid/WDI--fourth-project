@@ -1,8 +1,10 @@
 import React from 'react';
 
+import BackButton from '../utility/BackButton';
+
 function EditForm({ handleSubmit, handleChange, user }) {
   return (
-    <div>
+    <div className="singleComponentBox">
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name</label>
@@ -34,8 +36,9 @@ function EditForm({ handleSubmit, handleChange, user }) {
             onChange={handleChange}
           />
         </div>
-        <div>
-          <button>Save</button>
+        <div className="buttonsBox">
+          <button className="button">Save</button>
+          <BackButton />
         </div>
       </form>
     </div>

@@ -1,0 +1,41 @@
+img {
+  height: 200px;
+}
+
+.button {
+  border: 1px solid black;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: black;
+  margin: 5px;
+  font-size: 12px;
+  font-family: Times;
+  &.backButton {
+    font-size: 10px;
+  }
+}
+
+
+nav{
+  margin-bottom: 20px;
+}
+.container{
+  // width: 80%;
+  margin: 0 auto;
+}
+
+.singleComponentBox{
+  border: solid grey 1px;
+  margin: 10px;
+  padding: 10px;
+  &.singleVideoComponentBox{
+    width: 40%;
+    text-align: center;
+    // padding-top: 30px;
+  }
+}
+
+
+span {
+  font-style: italic;
+}

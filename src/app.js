@@ -10,7 +10,10 @@ import './scss/style.scss';
 
 import Login       from './components/auth/Login';
 import Register    from './components/auth/Register';
-import Navbar      from './components/Navbar';
+import Navbar      from './components/utility/Navbar';
+import VideosIndex from './components/videos/videosIndex';
+import VideoNew    from './components/videos/AddVideo.js';
+import VideosShow    from './components/videos/VideosShow.js';
 
 class App extends React.Component {
 
@@ -18,15 +21,18 @@ class App extends React.Component {
     return(
       <Router>
         <div className="container">
+          <Navbar />
           <Switch>
             {/* <Route exact path="/videos" component={VideosIndex} />
             <ProtectedRoute path="/videos/new" component={VideosNew} /> */}
             <ProtectedRoute path="/user/:id/edit" component={UserEdit} />
             <ProtectedRoute path="/user/:id" component={UserShow} />
+            <ProtectedRoute path="/videos/new" component={VideoNew} />
+            <ProtectedRoute path="/videos/:id" component={VideosShow} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route exact path="/" component={VideosIndex} />
           </Switch>
-          <Navbar />
         </div>
       </Router>
     );

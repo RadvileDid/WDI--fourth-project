@@ -1,5 +1,7 @@
 import React from 'react';
 
+import BackButton from '../utility/BackButton';
+
 
 const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
 
@@ -74,7 +76,10 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
         />
         {errors.profilePicture && <p>{errors.profilePicture}</p>}
       </div>
-      <button className="main-button" disabled={formIsInvalid}>Register</button>
+      <div className="buttonsBox">
+        <button className="button" disabled={formIsInvalid}>Let's register</button>
+        <BackButton />
+      </div>
     </form>
   );
 };

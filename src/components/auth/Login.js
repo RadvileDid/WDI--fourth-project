@@ -31,11 +31,13 @@ class Login extends React.Component {
 
   render() {
     return (
-      <LoginForm
-        user={this.state.user}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-      />
+      <div>
+        <LoginForm
+          user={this.state.user}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+      </div>
     );
   }
 }

@@ -1,0 +1,43 @@
+const Video = require('../models/video');
+
+function videosIndex(req, res, next) {
+  Video
+    .find()
+    .populate('upvotes.createdBy')
+    .exec()
+    .then(videos => res.json(videos))
+    .catch(next);
+}
+
+function videosCreate(req, res, next) {
+  req.body.createdBy = req.currentUser;
+  Video
+    .create(req.body)
+    .then(video => res.status(201).json(video))
+    .catch(next);
+}
+
+function videosDelete(req, res, next) {
+  Video
+    .findByIdAndRemove(req.params.id)
+    .then(() => res.status(204).end())
+    .catch(next);
+}
+
+function videosShow(req, res, next) {
+  Video
+    .findById(req.params.id)
+    .exec()
+    .then((video) => {
+      if(!video) return res.notFound();
+      res.json(video);
+    })
+    .catch(next);
+}
+
+module.exports = {
+  index: videosIndex,
+  create: videosCreate,
+  delete: videosDelete,
+  show: videosShow
+};

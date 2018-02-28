@@ -1,5 +1,7 @@
 import React from 'react';
 
+import BackButton from '../utility/BackButton';
+
 const LoginForm = ({ handleChange, handleSubmit, user }) => {
   return (
     <form onSubmit={handleSubmit}>
@@ -23,7 +25,10 @@ const LoginForm = ({ handleChange, handleSubmit, user }) => {
           className="form-control"
         />
       </div>
-      <button className="main-button">Login</button>
+      <div className="buttonsBox">
+        <button className="button">Let's login</button>
+        <BackButton />
+      </div>
     </form>
   );
 };

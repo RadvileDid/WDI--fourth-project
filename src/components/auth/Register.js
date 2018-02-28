@@ -2,7 +2,9 @@ import React from 'react';
 import Axios from 'axios';
 
 import RegisterForm from './RegisterForm';
-import Auth from '../../lib/Auth';
+// import Auth from '../../lib/Auth';
+
+import BackButton from '../utility/BackButton';
 
 class Register extends React.Component {
 
@@ -26,22 +28,22 @@ class Register extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     Axios.post('/api/register', this.state.user)
-      .then(res => {
-        Auth.setToken(res.data.token);
+      .then(() => {
         this.props.history.push('/login');
-        console.log('User registered in successfully');
       })
       .catch(err => console.log(err));
   }
 
   render() {
     return (
-      <RegisterForm
-        user={this.state.user}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-        errors={this.state.errors}
-      />
+      <div>
+        <RegisterForm
+          user={this.state.user}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          errors={this.state.errors}
+        />
+      </div>
     );
   }
 }

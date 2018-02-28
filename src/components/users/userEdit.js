@@ -4,6 +4,8 @@ import Axios from 'axios';
 import EditForm from './editForm';
 import Auth from '../../lib/Auth';
 
+import BackButton from '../utility/BackButton';
+
 
 class UserEdit extends React.Component {
   state = {
@@ -40,11 +42,13 @@ class UserEdit extends React.Component {
 
   render() {
     return (
-      <EditForm
-        handleSubmit={this.handleSubmit}
-        handleChange={this.handleChange}
-        user={this.state.user}
-      />
+      <div>
+        <EditForm
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          user={this.state.user}
+        />
+      </div>
     );
   }
 }
