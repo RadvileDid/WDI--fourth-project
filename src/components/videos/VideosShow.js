@@ -4,26 +4,6 @@ import YouTube from 'react-youtube';
 // // import { Link } from 'react-router-dom';
 // import Auth from '../../lib/Auth';
 
-
-// class UserShow extends React.Component {
-// state = {
-//   user: {
-//     name: '',
-//     username: '',
-//     profilePicture: ''
-//   }
-// }
-//
-// componentDidMount() {
-//   // const { match: { params } } = this.props;
-//   console.log(`${this.props.match.params.id}`);
-//
-//   Axios
-//     .get(`/api/user/${this.props.match.params.id}`)
-//     .then(res => this.setState({ user: res.data }))
-//     .catch(err => console.log(err));
-// }
-
 class VideosShow extends Component {
   state = {
     video: {}

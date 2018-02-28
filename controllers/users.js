@@ -20,7 +20,7 @@ function usersShowRoute(req, res, next) {
 
 function usersUpdateRoute(req, res, next) {
   User
-    .findByIdAndUpdate(req.params.id, req.body, { new: true })
+    .findByIdAndUpdate(req.currentUser.id, req.body, { new: true })
     .exec()
     .then(user => {
       if (!user) return res.notFound();

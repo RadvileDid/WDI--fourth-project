@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
-import youtubeThumbnail from 'youtube-thumbnail';
+import Video from './Video';
 import Auth from '../../lib/Auth';
 
 class VideosIndex extends Component {
@@ -13,7 +13,7 @@ class VideosIndex extends Component {
   componentDidMount() {
     Axios
       .get('/api/videos')
-      .then(res => this.setState({ videos: res.data }, () => console.log(this.state)))
+      .then(res => this.setState({ videos: res.data }))
       .catch(err => console.log(err));
   }
 
@@ -24,40 +24,18 @@ class VideosIndex extends Component {
       .catch(err => console.log(err));
   }
 
-  render() {
-
-    const videoNodes = this.state.videos.map((video) => {
-      const thumbData = youtubeThumbnail(`http://youtube.com/watch?v=${video.videoId}`);
-      return (
-        <div key={video._id} className="singleComponentBox singleVideoComponentBox">
-          <Link to={`/videos/${video._id}`}>
-            <img src={thumbData.high.url} />
-          </Link>
-          <p>
-            {video.title}
-          </p>
-          {video.danceStyle.map((styles, i) => {
-            return (
-              <div key={i} className="danceStyleTag">{styles}</div>
-            );
-          })}
-          <div>
-            <p>
-              Upvotes:
-              <span>
-                {video.upvotes.length}
-              </span>
-            </p>
-            {/* { Auth.isAuthenticated() && <form>
-                <input type="hidden" name="_method" value="PUT">
-                <input type="hidden" name="upvote" value={}>
-                <button class="btn btn-success btn-sm">Count me in! <i class="fa fa-user-plus" aria-hidden="true"></i></button>
-              </form>} */}
-          </div>
-        </div>
-      );
+  handleUpvote(videoId) {
+    Axios.post(`/api/videos/${videoId}/upvote`, {}, {
+      headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
+    }).then(() => {
+      console.log('upvoted');
     });
+  }
 
+  render() {
+    const videoNodes = this.state.videos.map((video) => {
+      return <Video video={video} key={video._id} onUpvote={this.handleUpvote} />;
+    });
 
     return(
       <div>

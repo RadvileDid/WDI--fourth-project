@@ -56,18 +56,10 @@ User
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=j7hmwrov9ag',
         createdBy: users[0],
         upvotes: [
-          {
-            createdBy: users[1]
-          },
-          {
-            createdBy: users[2]
-          },
-          {
-            createdBy: users[3]
-          },
-          {
-            createdBy: users[4]
-          }
+          users[1],
+          users[2],
+          users[3],
+          users[4]
         ]
       },
       {
@@ -76,12 +68,8 @@ User
         videoId: 'https://www.youtube.com/watch?v=7crqVBN110Y',
         createdBy: users[0],
         upvotes: [
-          {
-            createdBy: users[1]
-          },
-          {
-            createdBy: users[2]
-          }
+          users[1],
+          users[2]
         ]
       },
       {
@@ -90,12 +78,10 @@ User
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=MXyOjDp5CwQ',
         createdBy: users[0],
         upvotes: [
-          {
-            createdBy: users[3]
-          },
-          {
-            createdBy: users[4]
-          }
+          users[1],
+          users[2],
+          users[3],
+          users[4]
         ]
       },
       {
@@ -104,15 +90,10 @@ User
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=hoCO2iaSu58',
         createdBy: users[1],
         upvotes: [
-          {
-            createdBy: users[2]
-          },
-          {
-            createdBy: users[3]
-          },
-          {
-            createdBy: users[4]
-          }
+          users[1],
+          users[2],
+          users[3],
+          users[4]
         ]
       },
       {
@@ -121,12 +102,10 @@ User
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=InxSxDDBhe8',
         createdBy: users[1],
         upvotes: [
-          {
-            createdBy: users[3]
-          },
-          {
-            createdBy: users[4]
-          }
+          users[1],
+          users[2],
+          users[3],
+          users[4]
         ]
       },
       {
@@ -135,12 +114,10 @@ User
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=qLgR4dZ4WXk',
         createdBy: users[1],
         upvotes: [
-          {
-            createdBy: users[2]
-          },
-          {
-            createdBy: users[4]
-          }
+          users[1],
+          users[2],
+          users[3],
+          users[4]
         ]
       },
       {
@@ -149,12 +126,10 @@ User
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=PeQ4y-E8xj4',
         createdBy: users[2],
         upvotes: [
-          {
-            createdBy: users[3]
-          },
-          {
-            createdBy: users[4]
-          }
+          users[1],
+          users[2],
+          users[3],
+          users[4]
         ]
       },
       {
@@ -163,15 +138,10 @@ User
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=3SOIXxHzrf0',
         createdBy: users[2],
         upvotes: [
-          {
-            createdBy: users[1]
-          },
-          {
-            createdBy: users[3]
-          },
-          {
-            createdBy: users[4]
-          }
+          users[1],
+          users[2],
+          users[3],
+          users[4]
         ]
       },
       {
@@ -180,9 +150,10 @@ User
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=sE8E0CxQg5g',
         createdBy: users[2],
         upvotes: [
-          {
-            createdBy: users[1]
-          }
+          users[1],
+          users[2],
+          users[3],
+          users[4]
         ]
       }]);
   })

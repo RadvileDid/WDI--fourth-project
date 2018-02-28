@@ -2,8 +2,8 @@ const Video = require('../models/video');
 
 function videosIndex(req, res, next) {
   Video
-    .find()
-    .populate('upvotes.createdBy createdBy')
+    .find().sort({'createdAt': 1})
+    .populate('upvotes.createdBy createdBy createdAt')
     .exec()
     .then(videos => res.json(videos))
     .catch(next);
@@ -43,6 +43,9 @@ function upvoteRoute(req, res, next) {
     .exec()
     .then((video) => {
       if(!video) return res.notFound();
+      if(video.upvotes.indexOf(req.currentUser._id) > -1) {
+        throw new Error('You already have voted');
+      }
       video.upvotes.push(req.currentUser.id);
       return video.save();
     })

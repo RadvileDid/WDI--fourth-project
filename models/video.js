@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 
 const upvoteSchema = new mongoose.Schema({
   createdBy: {type: mongoose.Schema.ObjectId, ref: 'User', required: true}
-}, {
-  timestamps: true
 });
 
 upvoteSchema.methods.belongsTo = function upvoteBelongsTo(user) {
@@ -15,7 +13,9 @@ const videoSchema = new mongoose.Schema({
   danceStyle: { type: Array },
   videoId: { type: String },
   createdBy: {type: mongoose.Schema.ObjectId, ref: 'User', required: true},
-  upvotes: [ upvoteSchema ]
+  upvotes: [ {type: mongoose.Schema.ObjectId, ref: 'User', required: true} ]
+}, {
+  timestamps: true
 });
 
 videoSchema.pre('save', function splitUrl(next){
