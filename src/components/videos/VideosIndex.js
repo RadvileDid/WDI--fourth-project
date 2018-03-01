@@ -9,12 +9,16 @@ class VideosIndex extends Component {
     videos: []
   }
 
-  // .sort(createdBy:-1)
-
   componentDidMount() {
     Axios
       .get('/api/videos')
-      .then(res => this.setState({ videos: res.data }))
+      .then(res => {
+        const videos = res.data.reduce((obj, video) => {
+          obj[video.formattedDate] = obj[video.formattedDate] ? obj[video.formattedDate].concat([video]) : [video];
+          return obj;
+        }, {});
+        this.setState({ videos }, () => console.log(videos));
+      })
       .catch(err => console.log(err));
   }
 
@@ -33,9 +37,17 @@ class VideosIndex extends Component {
   }
 
   render() {
-    const videoNodes = this.state.videos.map((video) => {
-      return <Video video={video} key={video._id} onUpvote={this.handleUpvote} />;
-    });
+    // const videoNodes = this.state.videos.map((video) => {
+    //   return <Video video={video} key={video._id} onUpvote={this.handleUpvote} />;
+    // });
+
+    for (const i in this.state.videos) {
+      console.log('here trying to loop over the array', this.state.videos[i]);
+    }
+
+    // for (var i in "1-2-2018") {
+    //   return("1-2-2018"[i]);
+    // }
 
     return(
       <div>
@@ -47,7 +59,7 @@ class VideosIndex extends Component {
               </Link>
             </button>}
           </div>
-          <div>{videoNodes}</div>
+          {/* <div>{videoNodes}</div> */}
         </div>
       </div>
     );
