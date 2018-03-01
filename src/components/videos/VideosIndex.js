@@ -41,9 +41,10 @@ class VideosIndex extends Component {
     //   return <Video video={video} key={video._id} onUpvote={this.handleUpvote} />;
     // });
 
-    for (const i in this.state.videos) {
-      console.log('here trying to loop over the array', this.state.videos[i]);
-    }
+    // for (const i in this.state.videos) {
+    //   console.log('here trying to loop over the array of different days:', this.state.videos[i]);
+    //
+    // }
 
     // for (var i in "1-2-2018") {
     //   return("1-2-2018"[i]);

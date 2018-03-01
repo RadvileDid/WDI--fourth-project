@@ -1,12 +1,65 @@
 const Video = require('../models/video');
+const DAY_MS = 24 * 60 * 60 * 1000;
 
 function videosIndex(req, res, next) {
-  const tenAgo = new Date((new Date().getTime() - (10 * 24 * 60 * 60 * 1000)));
-  Video
-    .find({'createdAt': { $gte: tenAgo }}).sort({'createdAt': -1}).limit(20)
-    .populate('upvotes.createdBy createdBy')
+  const limitOfDays = 10;
+  const tenDaysAgoDate = new Date((new Date().getTime() - (limitOfDays * DAY_MS)));
+  const maxVideosPerDay = 5;
+
+  // Video
+  //   .find({'createdAt': { $gte: tenAgo }})
+  //   .sort({'createdAt': -1})
+  //   .limit(20)
+  //   .populate('upvotes.createdBy createdBy')
+  Video.aggregate([
+    {
+      $match: { createdAt: { $gte: tenDaysAgoDate }}
+    },
+    {
+      $project: {
+        video: '$$ROOT',
+        yymmdd: {
+          $dateToString: {
+            date: '$createdAt',
+            format: '%Y-%m-%d'
+          }
+        }
+      }
+    },
+    {
+      $unwind: '$video.upvotes'
+    },
+    {
+      '$group': {
+        _id: '$video._id',
+        yymmdd: { $first: '$yymmdd'} ,
+        video: { $first: '$video'},
+        totalVotes: { '$sum': 1}
+      }
+    },
+    {
+      $sort: { totalVotes: -1 }
+    },
+    {
+      $group: {
+        _id: {
+          yymmdd: '$yymmdd'
+        },
+        videos: { $push: '$$ROOT'}
+      }
+    }, {
+      $project: {
+        videos: { $slice: ['$videos', maxVideosPerDay] }
+      }
+    }, {
+      $sort: {'_id.yymmdd': -1}
+    }
+  ])
+    //.limit(limitOfDays)
     .exec()
-    .then(videos => res.json(videos))
+    .then(videos => {
+      res.json(videos);
+    })
     .catch(next);
 }
 
