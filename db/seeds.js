@@ -91,9 +91,7 @@ User
         createdBy: users[1],
         upvotes: [
           users[1],
-          users[2],
-          users[3],
-          users[4]
+          users[2]
         ]
       },
       {
@@ -102,8 +100,6 @@ User
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=InxSxDDBhe8',
         createdBy: users[1],
         upvotes: [
-          users[1],
-          users[2],
           users[3],
           users[4]
         ]
@@ -114,7 +110,6 @@ User
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=qLgR4dZ4WXk',
         createdBy: users[1],
         upvotes: [
-          users[1],
           users[2],
           users[3],
           users[4]
@@ -127,7 +122,7 @@ User
         createdBy: users[2],
         upvotes: [
           users[1],
-          users[2],
+          users[0],
           users[3],
           users[4]
         ]
@@ -136,6 +131,76 @@ User
         title: 'Sorority @ Auckland Regionals 2017',
         danceStyle: ['Wacking'],
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=3SOIXxHzrf0',
+        createdBy: users[4],
+        upvotes: [
+          users[3],
+          users[4]
+        ]
+      },
+      {
+        title: 'A$AP Ferg - Plain Jane : Gangdrea Choreography',
+        danceStyle: ['Popping', 'Locking'],
+        videoId: 'https://www.youtube.com/watch?time_continue=1&v=sE8E0CxQg5g',
+        createdBy: users[4],
+        upvotes: [
+          users[1],
+          users[2],
+          users[3],
+          users[4]
+        ]
+      },
+      {
+        title: '[CHOREOGRAPHY] BTS (방탄소년단) DNA Dance Practice',
+        danceStyle: ['Popping', 'Locking'],
+        videoId: 'https://www.youtube.com/watch?v=GEIU_7v40Dw',
+        createdBy: users[3],
+        upvotes: [
+          users[3],
+          users[4]
+        ]
+      },
+      {
+        title: 'Havana - Camila Cabello ft. Young Thug / May J Lee Choreography',
+        danceStyle: ['Popping', 'Locking'],
+        videoId: 'https://www.youtube.com/watch?v=5LjQauipkt8',
+        createdBy: users[3],
+        upvotes: [
+          users[1],
+          users[4]
+        ]
+      },
+      {
+        title: 'Boa (보아) - 네가 돌아 (Nega Dola) | Dance Cover',
+        danceStyle: ['Popping', 'Locking'],
+        videoId: 'https://www.youtube.com/watch?v=kZOP-wHr9iA',
+        createdBy: users[2],
+        upvotes: [
+          users[1]
+        ]
+      },
+      {
+        title: 'FRIENDS - Marshmello & Anne-Marie / Tina Boo Choreography',
+        danceStyle: ['Popping', 'Locking'],
+        videoId: 'https://www.youtube.com/watch?v=_xwX82Y0Oro',
+        createdBy: users[0],
+        upvotes: [
+          users[1]
+        ]
+      },
+      {
+        title: 'Nicki Minaj - Trini Dem Girls - Choreography by Tricia Miranda - (ft Aidan Prince) @timmilgram',
+        danceStyle: ['Popping', 'Locking'],
+        videoId: 'https://www.youtube.com/watch?v=qJaTxaulAMo',
+        createdBy: users[1],
+        upvotes: [
+          users[1],
+          users[3]
+        ]
+      },
+      {
+        title: 'Eric Bellinger - G.O.A.T. - Choreography by Nicole Kirkland | #TMillyTV',
+        danceStyle: ['Popping', 'Locking'],
+        videoId: 'https://www.youtube.com/watch?v=hvQQb7cT2F8',
         createdBy: users[2],
         upvotes: [
           users[1],
@@ -145,13 +210,11 @@ User
         ]
       },
       {
-        title: 'A$AP Ferg - Plain Jane : Gangdrea Choreography',
+        title: 'Worth it - Fifth Harmony ft.Kid Ink / May J Lee Choreography',
         danceStyle: ['Popping', 'Locking'],
-        videoId: 'https://www.youtube.com/watch?time_continue=1&v=sE8E0CxQg5g',
+        videoId: 'https://www.youtube.com/watch?v=zUDXj8REpAI',
         createdBy: users[2],
         upvotes: [
-          users[1],
-          users[2],
           users[3],
           users[4]
         ]

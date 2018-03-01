@@ -3,13 +3,7 @@ import { Link } from 'react-router-dom';
 import youtubeThumbnail from 'youtube-thumbnail';
 
 export default class Video extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleUpvoteClick = this.handleUpvoteClick.bind(this);
-  }
-
-  handleUpvoteClick() {
+  handleUpvoteClick = () => {
     this.props.onUpvote(this.props.video._id);
   }
 
@@ -22,23 +16,14 @@ export default class Video extends Component {
         <Link to={`/videos/${video._id}`}>
           <img src={thumbData.high.url} />
         </Link>
-        <p>
-          {video.title}
-        </p>
-        <p>
-          {video.createdAt}
-        </p>
+        <p>Title: <span>{video.title}</span></p>
         {video.danceStyle.map((styles, i) => {
           return (
             <div key={i} className="danceStyleTag">{styles}</div>
           );
         })}
-        <div>
-          Upvotes:
-          <span>
-            {video.upvotes.length}
-          </span>
-          <button onClick={this.handleUpvoteClick}>
+        <div>Upvotes: <span>{video.upvotes.length}</span>
+          <button onClick={this.handleUpvoteClick} className="button">
             UPVOTE
           </button>
         </div>

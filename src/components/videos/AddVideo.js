@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import Auth from '../../lib/Auth';
 
 import AddVideoForm from './AddVideoForm';
 
@@ -22,7 +23,9 @@ class VideosNew extends Component {
     e.preventDefault();
 
     Axios
-      .post('/api/videos', this.state.video)
+      .post('/api/videos', this.state.video, {
+        headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
+      })
       .then(() => this.props.history.push('/'))
       .catch(err => this.setState({errors: err.response.data.errors}));
   }

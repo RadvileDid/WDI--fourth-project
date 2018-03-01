@@ -9,6 +9,7 @@ class VideosIndex extends Component {
     videos: []
   }
 
+  // .sort(createdBy:-1)
 
   componentDidMount() {
     Axios
@@ -17,19 +18,18 @@ class VideosIndex extends Component {
       .catch(err => console.log(err));
   }
 
-  upvoteVideo = () => {
+  handleUpvote = (videoId) => {
     Axios
-      .post('/api/videos')
-      .then(() => this.props.history.push('/'))
-      .catch(err => console.log(err));
-  }
-
-  handleUpvote(videoId) {
-    Axios.post(`/api/videos/${videoId}/upvote`, {}, {
-      headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
-    }).then(() => {
-      console.log('upvoted');
-    });
+      .post(`/api/videos/${videoId}/upvote`, {}, {
+        headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
+      })
+      .then((res) => {
+        this.setState(prevState => {
+          const newState = prevState;
+          newState.videos = newState.videos.map(video => video._id === videoId ? res.data : video);
+          return newState;
+        });
+      });
   }
 
   render() {

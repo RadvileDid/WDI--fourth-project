@@ -1,13 +1,17 @@
 const Video = require('../models/video');
 
 function videosIndex(req, res, next) {
+  const tenAgo = new Date((new Date().getTime() - (10 * 24 * 60 * 60 * 1000)));
   Video
-    .find().sort({'createdAt': 1})
-    .populate('upvotes.createdBy createdBy createdAt')
+    .find({'createdAt': { $gte: tenAgo }}).sort({'createdAt': -1}).limit(10)
+    .populate('upvotes.createdBy createdBy')
     .exec()
     .then(videos => res.json(videos))
     .catch(next);
 }
+
+// {"date": {$gte: new Date((new Date().getTime() - (10 * 24 * 60 * 60 * 1000)))}}
+// ).sort({ "date": -1 })
 
 function videosCreate(req, res, next) {
   req.body.createdBy = req.currentUser;
@@ -36,8 +40,6 @@ function videosShow(req, res, next) {
 }
 
 function upvoteRoute(req, res, next) {
-  // req.body.createdBy = req.user;
-
   Video
     .findById(req.params.id)
     .exec()
