@@ -8,7 +8,7 @@ export default class Video extends Component {
   }
 
   render() {
-    const { video } = this.props;
+    const { video, upvotes } = this.props;
 
     const thumbData = youtubeThumbnail(`http://youtube.com/watch?v=${video.videoId}`);
     return (
@@ -22,7 +22,8 @@ export default class Video extends Component {
             <div key={i} className="danceStyleTag">{styles}</div>
           );
         })}
-        <div>Upvotes: <span>{video.upvotes.length}</span>
+        <div>Upvotes: <span>{upvotes}</span>
+
           <button onClick={this.handleUpvoteClick} className="button">
             UPVOTE
           </button>
