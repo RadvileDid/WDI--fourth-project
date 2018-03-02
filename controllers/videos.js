@@ -4,13 +4,8 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 function videosIndex(req, res, next) {
   const limitOfDays = 10;
   const tenDaysAgoDate = new Date((new Date().getTime() - (limitOfDays * DAY_MS)));
-  const maxVideosPerDay = 5;
+  const maxVideosPerDay = 10;
 
-  // Video
-  //   .find({'createdAt': { $gte: tenAgo }})
-  //   .sort({'createdAt': -1})
-  //   .limit(20)
-  //   .populate('upvotes.createdBy createdBy')
   Video.aggregate([
     {
       $match: { createdAt: { $gte: tenDaysAgoDate }}
@@ -55,9 +50,9 @@ function videosIndex(req, res, next) {
       $sort: {'_id.yymmdd': -1}
     }
   ])
-    //.limit(limitOfDays)
     .exec()
     .then(videos => {
+      console.log(videos);
       res.json(videos);
     })
     .catch(next);
@@ -65,6 +60,7 @@ function videosIndex(req, res, next) {
 
 function videosCreate(req, res, next) {
   req.body.createdBy = req.currentUser;
+  console.log(req.body);
   Video
     .create(req.body)
     .then(video => res.status(201).json(video))

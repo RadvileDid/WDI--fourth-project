@@ -13,23 +13,9 @@ class VideosIndex extends Component {
   componentDidMount() {
     Axios
       .get('/api/videos')
-      // .then(res => {
-      //   const videos = res.data.reduce((obj, video) => {
-      //     obj[video.formattedDate] = obj[video.formattedDate] ? obj[video.formattedDate].concat([video]) : [video];
-      //     return obj;
-      //   }, {});
-      //   this.setState({ videos }, () => console.log(videos));
-      // })
       .then(res => this.setState({ videosGroups: res.data}, () => console.log('inside of the componentDidMount, should be seeing a list for different days groups->', this.state.videosGroups, 'should be able to see the video list of a signle day here:', this.state.videosGroups[0].videos)))
       .catch(err => console.log(err));
   }
-
-  //, res.data._id, 'and this is my videos object->', res.data.videos
-  //{ videosGroups: res.data },
-  //res.data[0].videos[0].video, 'and', res.data
-  // this.state.videosGroups.map((video) => {
-  //   return <Video video={video} key={video._id} onUpvote={this.handleUpvote} />;
-  // });
 
 
   handleUpvote = (videoId) => {
@@ -50,6 +36,7 @@ class VideosIndex extends Component {
     const videoNodes = this.state.videosGroups.map((dayGroupData) => {
       console.log('This is a single Day group ->', 'this is my date->', dayGroupData._id.yymmdd, 'and these are my videos', dayGroupData.videos, 'and this is my first video title', dayGroupData.videos[0].video.title);
       // return <VideosOfDay day={dayGroupData._id} key={dayGroupData._id} videos={dayGroupData.videos} onUpvote={this.handleUpvote} />;
+
       return(
         <div key={dayGroupData._id.yymmdd} className="singleComponentBox">
           <p>Top videos from: {dayGroupData._id.yymmdd}</p>
@@ -83,15 +70,20 @@ class VideosIndex extends Component {
 
     return(
       <div>
-        <div>
-          <div>
+        <div className="row">
+          <div className="left">
+            { !Auth.isAuthenticated() && <Link to="/login" className="button">Login</Link> }
+            {' '}
+            { !Auth.isAuthenticated() && <Link to="/register" className="button">Register</Link>}
+            {' '}
+            {/* { Auth.isAuthenticated() && <a href="#" className="button" onClick={logout}>Logout</a>} */}
             { Auth.isAuthenticated() &&  <button className="button">
               <Link to="/videos/new">
                 <i className="fa fa-plus" aria-hidden="true"></i>Add video
               </Link>
             </button>}
           </div>
-          <div>{videoNodes}</div>
+          <div className="rigth">{videoNodes}</div>
         </div>
       </div>
     );

@@ -17,7 +17,7 @@ const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
             onChange={handleChange}
             value={video.title}
           />
-          {errors.title && <p>{errors.title}</p>}
+          {/* {errors.title && <p>{errors.title}</p>} */}
         </div>
         <div>
           <input
@@ -27,7 +27,7 @@ const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
             onChange={handleChange}
             value={video.videoId}
           />
-          {errors.videoId && <p>{errors.videoId}</p>}
+          {/* {errors.videoId && <p>{errors.videoId}</p>} */}
         </div>
 
         <div className="buttonsBox">

@@ -1,24 +1,22 @@
 import React from 'react';
-
 import BackButton from '../utility/BackButton';
-
 
 const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
 
   const formIsInvalid = Object.keys(errors).some(key => errors[key]);
-  console.log('inside of the register form:', errors);
-
+  // console.log('inside of the register form:', errors);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="formContainer">
       <div className="form-group">
         <input
           type="text"
           name="name"
-          placeholder="Name"
+          id="name"
+          placeholder="Name..."
           onChange={handleChange}
           value={user.name}
-          className="form-control"
+          className="formInput"
         />
         {errors.name && <p>{errors.name}</p>}
       </div>
@@ -26,10 +24,11 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
         <input
           type="text"
           name="username"
-          placeholder="Username"
+          id="username"
+          placeholder="Username..."
           onChange={handleChange}
           value={user.username}
-          className="form-control"
+          className="formInput"
         />
         {errors.username && <p>{errors.username}</p>}
       </div>
@@ -37,10 +36,11 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
         <input
           type="text"
           name="email"
+          id="email"
           placeholder="Email"
           onChange={handleChange}
           value={user.email}
-          className="form-control"
+          className="formInput"
         />
         {errors.email && <p>{errors.email}</p>}
       </div>
@@ -51,7 +51,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
           placeholder="Password"
           onChange={handleChange}
           value={user.password}
-          className="form-control"
+          className="formInput"
         />
         {errors.password && <p>{errors.password}</p>}
       </div>
@@ -59,10 +59,10 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
         <input
           type="password"
           name="passwordConfirmation"
-          placeholder="Confirm Password"
+          placeholder="Password confirmation"
           onChange={handleChange}
           value={user.passwordConfirmation}
-          className="form-control"
+          className="formInput"
         />
       </div>
       <div className="form-group">
@@ -72,12 +72,12 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
           placeholder="Add your profile image.."
           onChange={handleChange}
           value={user.profilePicture}
-          className="form-control"
+          className="formInput"
         />
         {errors.profilePicture && <p>{errors.profilePicture}</p>}
       </div>
       <div className="buttonsBox">
-        <button className="button" disabled={formIsInvalid}>Let's register</button>
+        <button className="button formSubmitButton" disabled={formIsInvalid}>Register</button>
         <BackButton />
       </div>
     </form>

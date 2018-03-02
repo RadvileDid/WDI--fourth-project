@@ -13,7 +13,7 @@ const videoSchema = new mongoose.Schema({
   danceStyle: { type: Array },
   videoId: { type: String },
   createdBy: {type: mongoose.Schema.ObjectId, ref: 'User', required: true},
-  upvotes: [ {type: mongoose.Schema.ObjectId, ref: 'User', required: true} ],
+  upvotes: [ {type: mongoose.Schema.ObjectId, ref: 'User'} ],
   formattedDate: { type: String }
 }, {
   timestamps: true

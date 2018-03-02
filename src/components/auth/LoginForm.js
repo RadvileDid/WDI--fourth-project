@@ -1,10 +1,11 @@
 import React from 'react';
-
 import BackButton from '../utility/BackButton';
 
-const LoginForm = ({ handleChange, handleSubmit, user }) => {
+const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
+  const formIsInvalid = Object.keys(errors).some(key => errors[key]);
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="formContainer">
       <div className="form-group">
         <input
           type="text"
@@ -12,8 +13,9 @@ const LoginForm = ({ handleChange, handleSubmit, user }) => {
           placeholder="Email"
           onChange={handleChange}
           value={user.email}
-          className="form-control"
+          className="formInput"
         />
+        {errors.email && <p>{errors.email}</p>}
       </div>
       <div className="form-group">
         <input
@@ -22,11 +24,12 @@ const LoginForm = ({ handleChange, handleSubmit, user }) => {
           placeholder="Password"
           onChange={handleChange}
           value={user.password}
-          className="form-control"
+          className="formInput"
         />
+        {errors.password && <p>{errors.password}</p>}
       </div>
       <div className="buttonsBox">
-        <button className="button">Let's login</button>
+        <button className="button formSubmitButton" disabled={formIsInvalid}>Login</button>
         <BackButton />
       </div>
     </form>

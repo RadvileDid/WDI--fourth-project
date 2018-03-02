@@ -1,3 +1,8 @@
+body{
+  box-sizing: content-box;
+}
+
+
 img {
   height: 200px;
 }
@@ -12,6 +17,15 @@ img {
   font-family: Times;
   &.backButton {
     font-size: 10px;
+    &:hover{
+      border: 1px solid dodgerBlue;
+    }
+  }
+  &.formSubmitButton{
+    &:hover{
+      border: 1px solid #3EA031;
+
+    }
   }
 }
 
@@ -25,11 +39,9 @@ nav{
 }
 
 .singleComponentBox{
-  border: solid grey 1px;
-  margin: 10px;
-  padding: 10px;
+  // width: 50%;
   &.singleVideoComponentBox{
-    width: 267px;
+    // width: 267px;
     text-align: center;
     // padding-top: 30px;
   }
@@ -40,9 +52,13 @@ nav{
   border: 1px solid grey;
   background-color: grey;
   color: white;
-  border-radius: 5px;
-  width: 20%;
+  border-radius: 3px;
+  padding: 3px 5px;
   font-size: 10px;
+}
+
+.danceStyleTagContainer{
+  display: flex;
 }
 
 span {
@@ -51,4 +67,58 @@ span {
 
 .smallFont{
   font-size: 10px;
+}
+
+
+// .btn:disabled{
+//   color: red
+// }
+
+
+//
+.fa-arrow-up{
+  padding-right: 5px;
+}
+
+.row{
+  display: flex;
+}
+
+.videoBox{
+  border-bottom: 1px solid grey;
+  padding: 10px 0;
+  // margin: 10px;
+}
+
+.testContainer{
+  padding: 5px;
+}
+
+.fa-arrow-up {
+    padding-right: 0px;
+}
+
+.voteButton{
+  padding: 3px 5px;
+}
+
+//
+.formContainer{
+  margin: 0 auto;
+  width: 40%;
+}
+
+.formInput{
+  width: 100%;
+  height: 35px;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.buttonsBox{
+  text-align: center;
+}
+
+.left, .right{
+  width: 50%;
 }

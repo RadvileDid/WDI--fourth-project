@@ -26,7 +26,9 @@ class UserShow extends React.Component {
     e.preventDefault();
     console.log(id);
     Axios
-      .delete(`/api/videos/${id}`)
+      .delete(`/api/videos/${id}`, {
+        headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
+      })
       .then(() => {
         this.setState(prevState => {
           const newState = prevState;

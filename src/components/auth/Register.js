@@ -4,7 +4,7 @@ import Axios from 'axios';
 import RegisterForm from './RegisterForm';
 // import Auth from '../../lib/Auth';
 
-import BackButton from '../utility/BackButton';
+// import BackButton from '../utility/BackButton';
 
 class Register extends React.Component {
 
@@ -31,7 +31,11 @@ class Register extends React.Component {
       .then(() => {
         this.props.history.push('/login');
       })
-      .catch(err => console.log(err));
+      .catch(err => this.setState(prevState => {
+        const newState = prevState;
+        newState.errors = err.response.data.errors;
+        return newState;
+      }));
   }
 
   render() {

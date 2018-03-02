@@ -10,10 +10,11 @@ import './scss/style.scss';
 
 import Login       from './components/auth/Login';
 import Register    from './components/auth/Register';
-import Navbar      from './components/utility/Navbar';
-import VideosIndex from './components/videos/videosIndex';
+import Logout      from './components/utility/Logout';
+import VideosIndex from './components/videos/VideosIndex';
 import VideoNew    from './components/videos/AddVideo.js';
 import VideosShow    from './components/videos/VideosShow.js';
+// import Auth from './lib/Auth';
 
 class App extends React.Component {
 
@@ -21,7 +22,7 @@ class App extends React.Component {
     return(
       <Router>
         <div className="container">
-          <Navbar />
+          <Logout />
           <Switch>
             {/* <Route exact path="/videos" component={VideosIndex} />
             <ProtectedRoute path="/videos/new" component={VideosNew} /> */}

@@ -10,7 +10,8 @@ class Login extends React.Component {
     user: {
       email: '',
       password: ''
-    }
+    },
+    errors: {}
   };
 
   handleChange = ({ target: { name, value } }) => {
@@ -26,7 +27,11 @@ class Login extends React.Component {
         this.props.history.push('/');
         console.log('User logged in successfully');
       })
-      .catch(err => console.log(err));
+      .catch(err => this.setState(prevState => {
+        const newState = prevState;
+        newState.errors = err.response.data.errors;
+        return newState;
+      }));
   }
 
   render() {
@@ -36,6 +41,7 @@ class Login extends React.Component {
           user={this.state.user}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          errors={this.state.errors}
         />
       </div>
     );

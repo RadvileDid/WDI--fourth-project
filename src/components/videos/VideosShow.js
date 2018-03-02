@@ -19,8 +19,8 @@ class VideosShow extends Component {
   render() {
 
     const opts = {
-      height: '190',
-      width: '290'
+      height: '390',
+      width: '490'
     };
 
 

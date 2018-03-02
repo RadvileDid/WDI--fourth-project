@@ -16,7 +16,7 @@ class VideosNew extends Component {
   handleChange = ({ target: { name, value }}) => {
     const video = Object.assign({}, this.state.video, { [name]: value });
     const errors = Object.assign({}, this.state.errors, { [name]: ''});
-    this.setState({ video, errors });
+    this.setState({ video, errors }, () => console.log(this.state));
   }
 
   handleSubmit = e => {
