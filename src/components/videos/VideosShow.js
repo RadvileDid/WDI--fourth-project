@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
+import classnames from 'classnames';
 import Axios from 'axios';
 import YouTube from 'react-youtube';
-// // import { Link } from 'react-router-dom';
-// import Auth from '../../lib/Auth';
 
 class VideosShow extends Component {
   state = {
@@ -11,22 +10,25 @@ class VideosShow extends Component {
 
   componentDidMount() {
     Axios
-      .get(`/api/videos/${this.props.match.params.id}`)
-      .then(res => this.setState({ video: res.data }, () => console.log(this.state)))
+      .get(`/api/videos/${this.props.match.params.videoId}`)
+      .then(res => this.setState({ video: res.data }))
       .catch(err => console.log(err));
   }
 
   render() {
-
     const opts = {
-      height: '390',
-      width: '490'
+      width: '100%'
     };
 
+    const rootClassName = classnames({
+      'singleComponentBox': true,
+      'singleVideoComponentBox': true,
+      'singleVideoComponentBox--asOverlay': !!this.props.asOverlay
+    });
 
     return(
       <div>
-        <div className="singleComponentBox singleVideoComponentBox">
+        <div className={rootClassName}>
           <YouTube
             videoId={this.state.video.videoId}
             opts={opts}

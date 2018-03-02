@@ -22,18 +22,31 @@ class App extends React.Component {
     return(
       <Router>
         <div className="container">
-          <Logout />
-          <Switch>
-            {/* <Route exact path="/videos" component={VideosIndex} />
-            <ProtectedRoute path="/videos/new" component={VideosNew} /> */}
-            <ProtectedRoute path="/user/:id/edit" component={UserEdit} />
-            <ProtectedRoute path="/user/:id" component={UserShow} />
-            <ProtectedRoute path="/videos/new" component={VideoNew} />
-            <ProtectedRoute path="/videos/:id" component={VideosShow} />
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route exact path="/" component={VideosIndex} />
-          </Switch>
+          <ProtectedRoute exact path="/user/:id/edit" component={UserEdit} />
+          <ProtectedRoute exact path="/user/:id" component={UserShow} />
+          <ProtectedRoute exact path="/videos/new" component={VideoNew} />
+          <Route path="/videos/:videoId" render={(router) => {
+            if(router.match.isExact) {
+              const asOverlay = router.location.state && router.location.state.showVideoOverlay;
+              return <VideosShow asOverlay={asOverlay} {...router} />;
+            }
+            return null;
+          }} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+          <Route path="/" render={(router) => {
+            let forceRender = false;
+            try {
+              forceRender = router.location.state.showVideoOverlay && router.location.state.from === 'VideosIndex';
+            } catch (e) {
+              forceRender = false;
+            }
+
+            if (router.match.isExact || forceRender) {
+              return <VideosIndex {...router} />;
+            }
+            return null;
+          }} />
         </div>
       </Router>
     );

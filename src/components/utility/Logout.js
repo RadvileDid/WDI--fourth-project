@@ -13,7 +13,6 @@ const Logout = ({ history }) => {
 
   return(
     <div>
-      <p>Discover the next big star in dance scene</p>
       { Auth.isAuthenticated() && <Link to={`/user/${Auth.getPayload().userId}`} className="button">Profile</Link>}
       {' '}
       { Auth.isAuthenticated() && <a href="#" className="button" onClick={logout}>Logout</a>}

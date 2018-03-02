@@ -1,5 +1,6 @@
-body{
-  box-sizing: content-box;
+* {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
 }
 
 
@@ -34,18 +35,22 @@ nav{
   margin-bottom: 20px;
 }
 .container{
-  // width: 80%;
   margin: 0 auto;
 }
 
-.singleComponentBox{
-  // width: 50%;
-  &.singleVideoComponentBox{
-    // width: 267px;
-    text-align: center;
-    // padding-top: 30px;
+
+.singleVideoComponentBox{
+  // width: 267px;
+  text-align: center;
+  // padding-top: 30px;
+  &.singleVideoComponentBox--asOverlay{
+    position: absolute;
+    left:10px;
+    top:35%;
+    width: 45vw;
   }
 }
+
 
 .danceStyleTag{
   margin: 5px;
@@ -65,9 +70,9 @@ span {
   font-style: italic;
 }
 
-.smallFont{
-  font-size: 10px;
-}
+// .smallFont{
+//   font-size: 10px;
+// }
 
 
 // .btn:disabled{
@@ -110,9 +115,13 @@ span {
 
 .formInput{
   width: 100%;
+  border: solid 1px lightgrey;
   height: 35px;
   margin: 5px 0;
-  padding: 5px;
+  padding-left: 7px;
+  &:hover {
+    border: solid 1px black;
+  }
 }
 
 .buttonsBox{
@@ -122,3 +131,44 @@ span {
 .left, .right{
   width: 50%;
 }
+
+.left{
+  margin-top: 15%;
+}
+
+.loginForm{
+  margin-top: 20%;
+}
+
+.registerForm{
+  margin-top: 20%;
+}
+
+.aboutText{
+  width: 75%;
+  margin: 0 auto;
+}
+
+.slogan{
+  padding-bottom: 20px;
+  text-align: right;
+}
+
+.info{
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.auth{
+  // margin: 20px auto;
+}
+
+.test{
+  margin: 40px auto;
+  width: 20%;
+}
+
+// h3 {
+//   font-family: 'Neucha', cursive;
+// }

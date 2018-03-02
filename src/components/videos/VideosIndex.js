@@ -4,19 +4,24 @@ import { Link } from 'react-router-dom';
 import Video from './Video';
 // import VideosOfDay from './Video';
 import Auth from '../../lib/Auth';
+import Logout from '../utility/Logout';
 
 class VideosIndex extends Component {
   state = {
     videosGroups: []
   }
 
+  constructor(props) {
+    super(props);
+    this.renderVideoListItem = this.renderVideoListItem.bind(this);
+  }
+
   componentDidMount() {
     Axios
       .get('/api/videos')
-      .then(res => this.setState({ videosGroups: res.data}, () => console.log('inside of the componentDidMount, should be seeing a list for different days groups->', this.state.videosGroups, 'should be able to see the video list of a signle day here:', this.state.videosGroups[0].videos)))
+      .then(res => this.setState({ videosGroups: res.data}))
       .catch(err => console.log(err));
   }
-
 
   handleUpvote = (videoId) => {
     Axios
@@ -32,56 +37,59 @@ class VideosIndex extends Component {
       });
   }
 
+  renderVideoListItem(videoData) {
+    return (
+      <Link
+        to={{
+          pathname: `/videos/${videoData._id}`,
+          state: {
+            showVideoOverlay: true,
+            from: 'VideosIndex'
+          }
+        }} key={videoData._id}
+      >
+        <Video
+          video={videoData.video}
+          upvotes={videoData.totalVotes}
+          key={videoData._id}
+          onUpvote={this.handleUpvote}
+        />
+      </Link>
+    );
+  }
+
   render() {
     const videoNodes = this.state.videosGroups.map((dayGroupData) => {
-      console.log('This is a single Day group ->', 'this is my date->', dayGroupData._id.yymmdd, 'and these are my videos', dayGroupData.videos, 'and this is my first video title', dayGroupData.videos[0].video.title);
-      // return <VideosOfDay day={dayGroupData._id} key={dayGroupData._id} videos={dayGroupData.videos} onUpvote={this.handleUpvote} />;
 
       return(
         <div key={dayGroupData._id.yymmdd} className="singleComponentBox">
           <p>Top videos from: {dayGroupData._id.yymmdd}</p>
-          {/* <p>This is my test video title:{ dayGroupData.videos[0].video.title}</p> */}
-          { dayGroupData && dayGroupData.videos.map((videosData) => {
-            console.log('checking videos here', videosData);
-            // return <div key={videosData._id}>
-            //   <div>{videosData.video.title}</div>
-            //   <div>{videosData.totalVotes}</div>
-            // </div>;
-            return <Video video={videosData.video} upvotes={videosData.totalVotes} key={videosData._id} onUpvote={this.handleUpvote} />;
-          })}
-
+          { dayGroupData && dayGroupData.videos.map(this.renderVideoListItem)}
         </div>
       );
     });
-
-
-
-    // for (const i in this.state.videos) {
-    //   console.log('here trying to loop over the array of different days:', this.state.videos[i]);
-    //
-    // }
-
-    // this.state.videosGroups.map((element) => {
-    //   console.log('this is my group ->', element.videos);
-    // this.state.videosGroups.videos.forEach((element) => {
-    //   console.log('this is my video element', element);
-    // });
-    // });
 
     return(
       <div>
         <div className="row">
           <div className="left">
-            { !Auth.isAuthenticated() && <Link to="/login" className="button">Login</Link> }
-            {' '}
-            { !Auth.isAuthenticated() && <Link to="/register" className="button">Register</Link>}
-            {' '}
-            {/* { Auth.isAuthenticated() && <a href="#" className="button" onClick={logout}>Logout</a>} */}
-            { Auth.isAuthenticated() &&  <button className="button">
-              <Link to="/videos/new">
-                <i className="fa fa-plus" aria-hidden="true"></i>Add video
-              </Link>
-            </button>}
+            {/* <Logout /> */}
+            <div className="aboutText">
+              <h2>Discover the next big start in the street dance</h2>
+              <div className="slogan">help the best talent to be noticed worldwide</div>
+              <div className="info">Upload your own videos and upvote the videos you like - spread the love for dance</div>
+            </div>
+            <div className="auth">
+              <div className="test">
+                { !Auth.isAuthenticated() && <Link to="/login" className="button">Login</Link> }
+                { !Auth.isAuthenticated() && <Link to="/register" className="button">Register</Link>}
+                { Auth.isAuthenticated() &&  <button className="button">
+                  <Link to="/videos/new">
+                    <i className="fa fa-plus" aria-hidden="true"></i>Add video
+                  </Link>
+                </button>}
+              </div>
+            </div>
           </div>
           <div className="rigth">{videoNodes}</div>
         </div>
