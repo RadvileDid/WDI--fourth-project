@@ -10,7 +10,7 @@ router.get('/', (req, res) => res.render('index'));
 router.route('/videos')
   .get(videos.index);
 
-router.route('/new')
+router.route('/videos/new')
   .post(secureRoute, videos.create);
 
 router.route('/videos/:id')

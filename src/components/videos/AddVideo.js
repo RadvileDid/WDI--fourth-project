@@ -29,7 +29,7 @@ class VideosNew extends Component {
     e.preventDefault();
 
     Axios
-      .post('/api/videos', this.state.video, {
+      .post('/api/videos/new', this.state.video, {
         headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
       })
       .then(() => this.props.history.push('/'))

@@ -24,12 +24,27 @@ const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
           <input
             type="text"
             name="videoId"
-            placeholder="Video URL"
+            placeholder="Please enter a valid YouTube URL"
             onChange={handleChange}
             value={video.videoId}
             className="formInput"
           />
           {/* {errors.videoId && <p>{errors.videoId}</p>} */}
+        </div>
+        <div>
+          <select id="danceStyles"
+            name="danceStyles"
+            onChange={handleChange}
+            value={video.danceStyle}
+            className="formInput"
+          >
+            <option value="" disabled selected>Choose a dance style</option>
+            <option value="Waacking">Waacking</option>
+            <option value="Popping">Popping</option>
+            <option value="Locking">Locking</option>
+            <option value="B-Boy">B-Boy</option>
+            <option value="Hip-hop">Hip-hop</option>
+          </select>
         </div>
 
         <div className="buttonsBox">
