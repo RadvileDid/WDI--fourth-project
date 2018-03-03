@@ -7,7 +7,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
   // console.log('inside of the register form:', errors);
 
   return (
-    <form onSubmit={handleSubmit} className="formContainer registerForm">
+    <form onSubmit={handleSubmit} className="formContainer register">
       <div className="form-group">
         <input
           type="text"

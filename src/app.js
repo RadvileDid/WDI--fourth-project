@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
 
 import UserShow from './components/users/userShow';
 import UserEdit from './components/users/userEdit';
@@ -10,7 +10,7 @@ import './scss/style.scss';
 
 import Login       from './components/auth/Login';
 import Register    from './components/auth/Register';
-import Logout      from './components/utility/Logout';
+// import Logout      from './components/utility/Logout';
 import VideosIndex from './components/videos/VideosIndex';
 import VideoNew    from './components/videos/AddVideo.js';
 import VideosShow    from './components/videos/VideosShow.js';
@@ -22,9 +22,9 @@ class App extends React.Component {
     return(
       <Router>
         <div className="container">
+          <ProtectedRoute exact path="/new" component={VideoNew} />
           <ProtectedRoute exact path="/user/:id/edit" component={UserEdit} />
           <ProtectedRoute exact path="/user/:id" component={UserShow} />
-          <ProtectedRoute exact path="/videos/new" component={VideoNew} />
           <Route path="/videos/:videoId" render={(router) => {
             if(router.match.isExact) {
               const asOverlay = router.location.state && router.location.state.showVideoOverlay;

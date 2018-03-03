@@ -5,21 +5,27 @@ import Auth from '../../lib/Auth';
 import AddVideoForm from './AddVideoForm';
 
 class VideosNew extends Component {
-    state = {
+  constructor(props) {
+    super(props);
+    this.state = {
       video: {
         title: '',
         videoId: ''
       },
       errors: {}
-    }
+    };
 
-  handleChange = ({ target: { name, value }}) => {
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange({ target: { name, value }}) {
     const video = Object.assign({}, this.state.video, { [name]: value });
     const errors = Object.assign({}, this.state.errors, { [name]: ''});
     this.setState({ video, errors }, () => console.log(this.state));
   }
 
-  handleSubmit = e => {
+  handleSubmit(e) {
     e.preventDefault();
 
     Axios

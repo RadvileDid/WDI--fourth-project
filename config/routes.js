@@ -8,7 +8,9 @@ const videos = require('../controllers/videos');
 router.get('/', (req, res) => res.render('index'));
 
 router.route('/videos')
-  .get(videos.index)
+  .get(videos.index);
+
+router.route('/new')
   .post(secureRoute, videos.create);
 
 router.route('/videos/:id')

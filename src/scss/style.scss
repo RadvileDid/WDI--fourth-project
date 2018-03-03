@@ -3,6 +3,9 @@
   font-family: 'Raleway', sans-serif;
 }
 
+body{
+  margin: 0;
+}
 
 img {
   height: 200px;
@@ -30,14 +33,9 @@ img {
   }
 }
 
-
-nav{
-  margin-bottom: 20px;
-}
 .container{
   margin: 0 auto;
 }
-
 
 .singleVideoComponentBox{
   text-align: center;
@@ -45,10 +43,9 @@ nav{
     position: absolute;
     left:10px;
     top:30%;
-    width: 45vw;
+    width: 40vw;
   }
 }
-
 
 .danceStyleTag{
   margin: 5px;
@@ -68,16 +65,6 @@ span {
   font-style: italic;
 }
 
-// .smallFont{
-//   font-size: 10px;
-// }
-
-
-// .btn:disabled{
-//   color: red
-// }
-
-
 //
 .fa-arrow-up{
   padding-right: 5px;
@@ -85,6 +72,15 @@ span {
 
 .row{
   display: flex;
+  flex-direction: row;
+}
+
+.right{
+  width: 50%;
+}
+
+.left{
+  width: 50%;
 }
 
 .videoBox{
@@ -107,8 +103,12 @@ span {
 
 //
 .formContainer{
-  margin: 0 auto;
+  margin: 20% auto 0;
   width: 40%;
+}
+
+.register{
+  margin-top: 15%;
 }
 
 .formInput{
@@ -124,22 +124,6 @@ span {
 
 .buttonsBox{
   text-align: center;
-}
-
-.left, .right{
-  width: 50%;
-}
-
-.left{
-  margin-top: 15%;
-}
-
-.loginForm{
-  margin-top: 20%;
-}
-
-.registerForm{
-  margin-top: 20%;
 }
 
 .aboutText{
@@ -159,10 +143,6 @@ span {
   text-align: center;
 }
 
-.auth{
-  // margin: 20px auto;
-}
-
 .test{
   margin: 40px auto;
   width: 30%;
@@ -179,7 +159,3 @@ a {
 .fa-plus{
   padding-right: 5px;
 }
-
-// h3 {
-//   font-family: 'Neucha', cursive;
-// }

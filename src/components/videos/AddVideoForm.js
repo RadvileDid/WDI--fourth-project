@@ -8,7 +8,7 @@ const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
 
   return (
     <div className="singleComponentBox">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="formContainer">
         <div>
           <input
             type="text"
@@ -16,6 +16,7 @@ const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
             placeholder="Title"
             onChange={handleChange}
             value={video.title}
+            className="formInput"
           />
           {/* {errors.title && <p>{errors.title}</p>} */}
         </div>
@@ -26,6 +27,7 @@ const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
             placeholder="Video URL"
             onChange={handleChange}
             value={video.videoId}
+            className="formInput"
           />
           {/* {errors.videoId && <p>{errors.videoId}</p>} */}
         </div>

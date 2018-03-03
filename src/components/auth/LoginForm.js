@@ -5,7 +5,7 @@ const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
   const formIsInvalid = Object.keys(errors).some(key => errors[key]);
 
   return (
-    <form onSubmit={handleSubmit} className="formContainer loginForm">
+    <form onSubmit={handleSubmit} className="formContainer">
       <div className="form-group">
         <input
           type="text"

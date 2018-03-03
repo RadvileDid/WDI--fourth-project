@@ -13,7 +13,7 @@ class VideosShow extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.props.match.params.videoId != nextProps.match.params.videoId) {
+    if(this.props.match.params.videoId !== nextProps.match.params.videoId) {
       this.fetchVideo(nextProps.match.params.videoId);
     }
   }

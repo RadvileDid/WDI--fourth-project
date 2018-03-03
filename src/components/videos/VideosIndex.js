@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 import Video from './Video';
-// import VideosOfDay from './Video';
 import Auth from '../../lib/Auth';
-import Logout from '../utility/Logout';
+// import Logout from '../utility/Logout';
 
 class VideosIndex extends Component {
   state = {
@@ -84,7 +83,7 @@ class VideosIndex extends Component {
                 { !Auth.isAuthenticated() && <Link to="/login" className="button">Login</Link> }
                 { !Auth.isAuthenticated() && <Link to="/register" className="button">Register</Link>}
                 { Auth.isAuthenticated() &&  <button className="button">
-                  <Link to="/videos/new">
+                  <Link to="/new">
                     <i className="fa fa-plus" aria-hidden="true"></i>Add video
                   </Link>
                 </button>}
