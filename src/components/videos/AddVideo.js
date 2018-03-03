@@ -10,7 +10,8 @@ class VideosNew extends Component {
     this.state = {
       video: {
         title: '',
-        videoId: ''
+        videoId: '',
+        danceStyle: ''
       },
       errors: {}
     };
@@ -33,7 +34,11 @@ class VideosNew extends Component {
         headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
       })
       .then(() => this.props.history.push('/'))
-      .catch(err => this.setState({errors: err.response.data.errors}));
+      .catch(err => this.setState(prevState => {
+        const newState = prevState;
+        newState.errors = err.response.data.errors;
+        return newState;
+      }));
   }
 
   render() {

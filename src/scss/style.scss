@@ -25,11 +25,17 @@ img {
       border: 1px solid dodgerBlue;
     }
   }
-  &.formSubmitButton{
-    &:hover{
-      border: 1px solid #3EA031;
+}
 
-    }
+.success {
+  &:hover {
+    border: 1px solid #3EA031;
+  }
+}
+
+.cancel {
+  &:hover {
+    border: 1px solid red;
   }
 }
 
@@ -81,7 +87,15 @@ span {
 
 .left{
   width: 50%;
+  margin-top: 20%;
+  &.leftProfile{
+    margin: 10% auto 0;
+    text-align: center;
+  }
 }
+
+
+
 
 .videoBox{
   border-bottom: 1px solid grey;
@@ -111,9 +125,6 @@ span {
   margin-top: 15%;
 }
 
-.left {
-  margin-top: 20%;
-}
 
 .formInput{
   width: 100%;
@@ -147,9 +158,16 @@ span {
   text-align: center;
 }
 
-.test{
+.buttons{
   margin: 40px auto;
   width: 30%;
+}
+
+.profileButtons{
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  margin: 0 auto;
 }
 
 a {
@@ -158,6 +176,11 @@ a {
   &.button{
     font-family: 'Raleway', sans-serif;
   }
+}
+
+.logout{
+  margin-top: 13px;
+  // padding-top: 3px;
 }
 
 .fa-plus{

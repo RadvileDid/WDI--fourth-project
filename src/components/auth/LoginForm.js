@@ -29,7 +29,7 @@ const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
         {errors.password && <p>{errors.password}</p>}
       </div>
       <div className="buttonsBox">
-        <button className="button formSubmitButton" disabled={formIsInvalid}>Login</button>
+        <button className="button success" disabled={formIsInvalid}>Login</button>
         <BackButton />
       </div>
     </form>

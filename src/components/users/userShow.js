@@ -1,9 +1,11 @@
 import React from 'react';
-import { Link, browserRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Axios from 'axios';
-import BackButton from '../utility/BackButton';
 import youtubeThumbnail from 'youtube-thumbnail';
-import Auth from '../../lib/Auth';
+
+import Auth       from '../../lib/Auth';
+import Logout     from '../utility/Logout';
+import BackButton from '../utility/BackButton';
 
 class UserShow extends React.Component {
   state = {
@@ -49,7 +51,7 @@ class UserShow extends React.Component {
           <p className="smallFont">{video.title}</p>
           <form onSubmit={(e) => this.deleteVideo(video._id, e)}>
             <input type="hidden" name="_method" value="DELETE" />
-            <button><i className="fa fa-trash" aria-hidden="true"></i></button>
+            <button className="button"><i className="fa fa-trash" aria-hidden="true"></i></button>
           </form>
         </div>
       );
@@ -57,18 +59,27 @@ class UserShow extends React.Component {
 
     return (
       <div className="singleComponentBox">
-        <p>This is profile page</p>
-        <div>
-          <img src={this.state.user.profilePicture} />
-        </div>
-        <div>
-          <h3>Name: <span>{this.state.user.name}</span></h3>
-          <h4>Username: <span>{this.state.user.username}</span></h4>
-        </div>
-        { Auth.isAuthenticated() && <Link to={`/user/${this.props.match.params.id}/edit`} className="button">Edit</Link>}
-        <BackButton />
-        <div className="myVidoes">
-          {videoNodes}
+        <div className="row">
+          <div className="leftProfile left">
+            <div>
+              <img src={this.state.user.profilePicture} />
+            </div>
+            <div>
+              <h3>Name: <span>{this.state.user.name}</span></h3>
+              <h4>Username: <span>{this.state.user.username}</span></h4>
+              <h4>Email: <span>{this.state.user.email}</span></h4>
+            </div>
+            <div className="profileButtons">
+              <BackButton />
+              { Auth.isAuthenticated() && <Link to={`/user/${this.props.match.params.id}/edit`} className="button">Edit</Link>}
+              <Logout />
+            </div>
+          </div>
+          <div className="rightProfile right">
+            <div className="myVidoes">
+              {videoNodes}
+            </div>
+          </div>
         </div>
       </div>
     );

@@ -9,9 +9,9 @@ upvoteSchema.methods.belongsTo = function upvoteBelongsTo(user) {
 };
 
 const videoSchema = new mongoose.Schema({
-  title: { type: String},
-  danceStyle: { type: Array },
-  videoId: { type: String },
+  title: { type: String, required: 'Please provide a title of your video'},
+  danceStyle: { type: String },
+  videoId: { type: String, required: 'Please enter a valid YouTube '},
   createdBy: {type: mongoose.Schema.ObjectId, ref: 'User', required: true},
   upvotes: [ {type: mongoose.Schema.ObjectId, ref: 'User'} ],
   formattedDate: { type: String }

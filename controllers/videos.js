@@ -22,7 +22,10 @@ function videosIndex(req, res, next) {
       }
     },
     {
-      $unwind: '$video.upvotes'
+      $unwind: {
+        path: '$video.upvotes',
+        preserveNullAndEmptyArrays: true
+      }
     },
     {
       '$group': {

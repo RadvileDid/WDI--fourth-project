@@ -18,7 +18,7 @@ const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
             value={video.title}
             className="formInput"
           />
-          {/* {errors.title && <p>{errors.title}</p>} */}
+          {errors.title && <p>{errors.title}</p>}
         </div>
         <div>
           <input
@@ -29,7 +29,7 @@ const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
             value={video.videoId}
             className="formInput"
           />
-          {/* {errors.videoId && <p>{errors.videoId}</p>} */}
+          {errors.videoId && <p>{errors.videoId}</p>}
         </div>
         <div>
           <select id="danceStyles"
@@ -38,7 +38,7 @@ const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
             value={video.danceStyle}
             className="formInput"
           >
-            <option value="" disabled selected>Choose a dance style</option>
+            <option defaultValue="" disabled selected>Choose a dance style</option>
             <option value="Waacking">Waacking</option>
             <option value="Popping">Popping</option>
             <option value="Locking">Locking</option>

@@ -77,7 +77,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
         {errors.profilePicture && <p>{errors.profilePicture}</p>}
       </div>
       <div className="buttonsBox">
-        <button className="button formSubmitButton" disabled={formIsInvalid}>Register</button>
+        <button className="button success" disabled={formIsInvalid}>Register</button>
         <BackButton />
       </div>
     </form>

@@ -4,9 +4,6 @@ import Axios from 'axios';
 import EditForm from './editForm';
 import Auth from '../../lib/Auth';
 
-import BackButton from '../utility/BackButton';
-
-
 class UserEdit extends React.Component {
   state = {
     user: {
