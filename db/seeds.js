@@ -52,7 +52,7 @@ User
     return Video
       .create([{
         title: 'BBO | QUAREN\'S BRIDGE',
-        danceStyle: ['Locking'],
+        danceStyle: 'Locking',
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=j7hmwrov9ag',
         createdBy: users[0],
         upvotes: [
@@ -64,7 +64,7 @@ User
       },
       {
         title: 'Hazell Dean - Searchin\' | IBUKI choreography | Prepix Dance Studio',
-        danceStyle: ['Wacking'],
+        danceStyle: 'Waacking',
         videoId: 'https://www.youtube.com/watch?v=7crqVBN110Y',
         createdBy: users[0],
         upvotes: [
@@ -74,7 +74,7 @@ User
       },
       {
         title: 'MADD CHADD | MECHANICAL MONDAY | KANO - IM READY',
-        danceStyle: ['Popping'],
+        danceStyle: 'Popping',
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=MXyOjDp5CwQ',
         createdBy: users[0],
         upvotes: [
@@ -86,7 +86,7 @@ User
       },
       {
         title: 'Chris Brown "TO MY BED" | Duc Anh Tran x Daniel Fekete Choreography',
-        danceStyle: ['Locking'],
+        danceStyle: 'Locking',
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=hoCO2iaSu58',
         createdBy: users[1],
         upvotes: [
@@ -96,7 +96,7 @@ User
       },
       {
         title: 'THE KINJAZ "Heritage" (CloZee Remix)',
-        danceStyle: ['Wacking'],
+        danceStyle: 'Wacking',
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=InxSxDDBhe8',
         createdBy: users[1],
         upvotes: [
@@ -106,7 +106,7 @@ User
       },
       {
         title: 'SLIPS & SLURS | DUBSTEP',
-        danceStyle: ['Popping'],
+        danceStyle: 'Popping',
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=qLgR4dZ4WXk',
         createdBy: users[1],
         upvotes: [
@@ -117,7 +117,7 @@ User
       },
       {
         title: 'Finesse - Bruno Mars ft. Cardi B / May J Lee X Austin Pak Choreography',
-        danceStyle: ['Popping', 'Locking'],
+        danceStyle: 'Popping',
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=PeQ4y-E8xj4',
         createdBy: users[2],
         upvotes: [
@@ -129,7 +129,7 @@ User
       },
       {
         title: 'Sorority @ Auckland Regionals 2017',
-        danceStyle: ['Wacking'],
+        danceStyle: 'Wacking',
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=3SOIXxHzrf0',
         createdBy: users[4],
         upvotes: [
@@ -139,7 +139,7 @@ User
       },
       {
         title: 'A$AP Ferg - Plain Jane : Gangdrea Choreography',
-        danceStyle: ['Popping', 'Locking'],
+        danceStyle: 'Locking',
         videoId: 'https://www.youtube.com/watch?time_continue=1&v=sE8E0CxQg5g',
         createdBy: users[4],
         upvotes: [
@@ -151,7 +151,7 @@ User
       },
       {
         title: '[CHOREOGRAPHY] BTS (방탄소년단) DNA Dance Practice',
-        danceStyle: ['Popping', 'Locking'],
+        danceStyle: 'Locking',
         videoId: 'https://www.youtube.com/watch?v=GEIU_7v40Dw',
         createdBy: users[3],
         upvotes: [
@@ -161,7 +161,7 @@ User
       },
       {
         title: 'Havana - Camila Cabello ft. Young Thug / May J Lee Choreography',
-        danceStyle: ['Popping', 'Locking'],
+        danceStyle: 'Popping',
         videoId: 'https://www.youtube.com/watch?v=5LjQauipkt8',
         createdBy: users[3],
         upvotes: [
@@ -171,7 +171,7 @@ User
       },
       {
         title: 'Boa (보아) - 네가 돌아 (Nega Dola) | Dance Cover',
-        danceStyle: ['Popping', 'Locking'],
+        danceStyle: 'Popping',
         videoId: 'https://www.youtube.com/watch?v=kZOP-wHr9iA',
         createdBy: users[2],
         upvotes: [
@@ -180,7 +180,7 @@ User
       },
       {
         title: 'FRIENDS - Marshmello & Anne-Marie / Tina Boo Choreography',
-        danceStyle: ['Popping', 'Locking'],
+        danceStyle: 'Locking',
         videoId: 'https://www.youtube.com/watch?v=_xwX82Y0Oro',
         createdBy: users[0],
         upvotes: [
@@ -189,7 +189,7 @@ User
       },
       {
         title: 'Nicki Minaj - Trini Dem Girls - Choreography by Tricia Miranda - (ft Aidan Prince) @timmilgram',
-        danceStyle: ['Popping', 'Locking'],
+        danceStyle: 'Popping',
         videoId: 'https://www.youtube.com/watch?v=qJaTxaulAMo',
         createdBy: users[1],
         upvotes: [
@@ -199,7 +199,7 @@ User
       },
       {
         title: 'Eric Bellinger - G.O.A.T. - Choreography by Nicole Kirkland | #TMillyTV',
-        danceStyle: ['Popping', 'Locking'],
+        danceStyle: 'Locking',
         videoId: 'https://www.youtube.com/watch?v=hvQQb7cT2F8',
         createdBy: users[2],
         upvotes: [
@@ -211,7 +211,7 @@ User
       },
       {
         title: 'Worth it - Fifth Harmony ft.Kid Ink / May J Lee Choreography',
-        danceStyle: ['Popping', 'Locking'],
+        danceStyle: 'Hip-hop',
         videoId: 'https://www.youtube.com/watch?v=zUDXj8REpAI',
         createdBy: users[2],
         upvotes: [
