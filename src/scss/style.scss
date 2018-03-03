@@ -40,13 +40,11 @@ nav{
 
 
 .singleVideoComponentBox{
-  // width: 267px;
   text-align: center;
-  // padding-top: 30px;
   &.singleVideoComponentBox--asOverlay{
     position: absolute;
     left:10px;
-    top:35%;
+    top:30%;
     width: 45vw;
   }
 }
@@ -152,6 +150,7 @@ span {
 .slogan{
   padding-bottom: 20px;
   text-align: right;
+  color: grey;
 }
 
 .info{
@@ -166,7 +165,19 @@ span {
 
 .test{
   margin: 40px auto;
-  width: 20%;
+  width: 30%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  &.button{
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+.fa-plus{
+  padding-right: 5px;
 }
 
 // h3 {

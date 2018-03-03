@@ -9,8 +9,18 @@ class VideosShow extends Component {
   }
 
   componentDidMount() {
+    this.fetchVideo(this.props.match.params.videoId);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.match.params.videoId != nextProps.match.params.videoId) {
+      this.fetchVideo(nextProps.match.params.videoId);
+    }
+  }
+
+  fetchVideo(videoId) {
     Axios
-      .get(`/api/videos/${this.props.match.params.videoId}`)
+      .get(`/api/videos/${videoId}`)
       .then(res => this.setState({ video: res.data }))
       .catch(err => console.log(err));
   }

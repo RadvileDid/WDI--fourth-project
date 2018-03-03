@@ -88,6 +88,7 @@ class VideosIndex extends Component {
                     <i className="fa fa-plus" aria-hidden="true"></i>Add video
                   </Link>
                 </button>}
+                { Auth.isAuthenticated() && <Link to={`/user/${Auth.getPayload().userId}`} className="button">Profile</Link>}
               </div>
             </div>
           </div>
