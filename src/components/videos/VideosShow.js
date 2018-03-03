@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classnames from 'classnames';
 import Axios from 'axios';
 import YouTube from 'react-youtube';
+import { Link } from 'react-router-dom';
 
 class VideosShow extends Component {
   state = {
@@ -44,6 +45,8 @@ class VideosShow extends Component {
             opts={opts}
           />
         </div>
+        <Link to="/" className="button close">X
+        </Link>
       </div>
     );
   }

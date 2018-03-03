@@ -111,6 +111,10 @@ span {
   margin-top: 15%;
 }
 
+.left {
+  margin-top: 20%;
+}
+
 .formInput{
   width: 100%;
   border: solid 1px lightgrey;
@@ -158,4 +162,10 @@ a {
 
 .fa-plus{
   padding-right: 5px;
+}
+
+.close{
+  position: absolute;
+  top: 600px;
+  left: 270px;
 }
