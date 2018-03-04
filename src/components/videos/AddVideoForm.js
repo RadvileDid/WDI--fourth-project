@@ -39,11 +39,11 @@ const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
             className="formInput"
           >
             <option  value="" disabled selected>Choose a dance style</option>
-            <option value="Waacking">Waacking</option>
-            <option value="Popping">Popping</option>
-            <option value="Locking">Locking</option>
-            <option value="B-Boy">B-Boy</option>
-            <option value="Hip-hop">Hip-hop</option>
+            <option value={video.danceStyle}>Waacking</option>
+            <option value={video.danceStyle}>Popping</option>
+            <option value={video.danceStyle}>Locking</option>
+            <option value={video.danceStyle}>B-Boy</option>
+            <option value={video.danceStyle}>Hip-hop</option>
           </select>
         </div>
 

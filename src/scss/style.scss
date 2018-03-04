@@ -44,6 +44,10 @@ img {
   margin: 5px auto;
 }
 
+h1{
+  font-size: 24px;
+}
+
 
 // <<<<<< icons >>>>>>
 .fa-arrow-up{
@@ -210,4 +214,14 @@ a {
 .buttonsBox{
   text-align: center;
   margin-top: 10px;
+}
+
+.counter{
+  counter-reset: my-counter;
+}
+
+.counter .counterListItem:before {
+	content: "#" counter(my-counter);
+	counter-increment: my-counter;
+  font-size: 24px;
 }

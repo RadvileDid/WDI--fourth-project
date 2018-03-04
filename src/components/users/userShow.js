@@ -84,7 +84,7 @@ class UserShow extends React.Component {
           </div>
           <div className="rightProfile right">
             <div className="myVidoes">
-              My videos:
+              <h1>My videos:</h1>
               {videoNodes}
             </div>
           </div>

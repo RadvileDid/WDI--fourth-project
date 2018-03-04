@@ -47,6 +47,7 @@ class VideosIndex extends Component {
             from: 'VideosIndex'
           }
         }} key={videoData._id}
+        className="counterListItem"
       >
         <Video
           video={videoData.video}
@@ -72,10 +73,12 @@ class VideosIndex extends Component {
 
       return(
         <div key={dayGroupData._id.yymmdd} className="singleComponentBox">
-          <h2>
+          <h1>
             {day}
-          </h2>
-          { dayGroupData && dayGroupData.videos.map(this.renderVideoListItem)}
+          </h1>
+          <div className="counter">
+            { dayGroupData && dayGroupData.videos.map(this.renderVideoListItem)}
+          </div>
         </div>
       );
     });
