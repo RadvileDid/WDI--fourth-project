@@ -2,6 +2,7 @@ import React from 'react';
 import BackButton from '../utility/BackButton';
 
 const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
+
   const formIsInvalid = Object.keys(errors).some(key => errors[key]);
 
   return (
@@ -29,7 +30,7 @@ const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
         {errors.password && <p>{errors.password}</p>}
       </div>
       <div className="buttonsBox">
-        <button className="button success" disabled={formIsInvalid}>Login</button>
+        <button className="button success authButton" disabled={formIsInvalid}>Login</button>
         <BackButton />
       </div>
     </form>

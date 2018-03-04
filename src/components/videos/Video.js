@@ -5,7 +5,8 @@ import Auth from '../../lib/Auth';
 // import Axios from 'axios';
 
 export default class Video extends Component {
-  handleUpvoteClick = () => {
+  handleUpvoteClick = (e) => {
+    e.preventDefault();
     this.props.onUpvote(this.props.video._id);
   }
 
@@ -18,19 +19,15 @@ export default class Video extends Component {
           <div className="videoImageContainer">
             <img src={thumbData.high.url} />
           </div>
-          <div className="testContainer">
+          <div className="singleVideoRightContainer">
             <p>{video.title}</p>
-            <div className="danceStyleTagContainer">
-              {video.danceStyle.map((styles, i) => {
-                return (
-                  <div key={i} className="danceStyleTag">{styles}</div>
-                );
-              })}
+            <div className="danceStyle">
+              {video.danceStyle}
             </div>
             <div>
               { Auth.isAuthenticated() &&
               <button onClick={this.handleUpvoteClick} className="voteButton button">
-                <i className="fas fa-arrow-up"></i>
+                Vote <i className="fas fa-arrow-up"></i>
               </button>}
               Total votes: {upvotes}
             </div>

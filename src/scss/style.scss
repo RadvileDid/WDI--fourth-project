@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
+  font-size: 14px;
 }
 
 body{
@@ -11,71 +12,58 @@ img {
   height: 200px;
 }
 
-.button {
-  border: 1px solid black;
-  padding: 10px 12px;
-  text-decoration: none;
-  color: black;
-  margin: 5px;
-  font-size: 12px;
-  font-family: Times;
-  &.backButton {
-    font-size: 10px;
-    &:hover{
-      border: 1px solid dodgerBlue;
-    }
-  }
-}
-
-.success {
-  &:hover {
-    border: 1px solid #3EA031;
-  }
-}
-
-.cancel {
-  &:hover {
-    border: 1px solid red;
-  }
-}
-
 .container{
   margin: 0 auto;
 }
 
-.singleVideoComponentBox{
-  text-align: center;
-  &.singleVideoComponentBox--asOverlay{
-    position: absolute;
-    left:10px;
-    top:30%;
-    width: 40vw;
-  }
+.error{
+  margin: 3px 0px 10px;
+  background-color: #F9D9DE;
+  color: white;
+  font-size: 12px;
+  padding: 5px;
+  font-weight: bold;
 }
 
-.danceStyleTag{
-  margin: 5px;
-  border: 1px solid grey;
+.rowProfile{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 30px;
+  width: 60%;
+}
+
+
+.danceStyle{
   background-color: grey;
   color: white;
-  border-radius: 3px;
-  padding: 3px 5px;
-  font-size: 10px;
+  border-radius: 5px;
+  width: 75px;
+  padding: 5px 7px;
+  margin: 5px auto;
 }
 
-.danceStyleTagContainer{
-  display: flex;
-}
 
-span {
-  font-style: italic;
-}
-
-//
+// <<<<<< icons >>>>>>
 .fa-arrow-up{
   padding-right: 5px;
 }
 
+.icon{
+  height: 20px;
+}
+
+.fa-plus{
+  padding-right: 5px;
+}
+
+.fa-arrow-up {
+    padding-right: 0px;
+}
+
+
+// <<<< layout >>>>>
 .row{
   display: flex;
   flex-direction: row;
@@ -96,35 +84,34 @@ span {
 
 
 
-
+// <<<<< video styles >>>>>
 .videoBox{
-  border-bottom: 1px solid grey;
   padding: 10px 0;
-  // margin: 10px;
 }
 
-.testContainer{
+.singleVideoRightContainer{
   padding: 5px;
 }
 
-.fa-arrow-up {
-    padding-right: 0px;
+.singleVideoComponentBox{
+  text-align: center;
+  &.singleVideoComponentBox--asOverlay{
+    position: absolute;
+    left:10px;
+    top:30%;
+    width: 40vw;
+  }
 }
 
-.voteButton{
-  padding: 3px 5px;
-}
-
-//
+// <<<<<  forms  >>>>>>>>>
 .formContainer{
   margin: 20% auto 0;
   width: 40%;
 }
 
 .register{
-  margin-top: 15%;
+  margin-top: 10%;
 }
-
 
 .formInput{
   width: 100%;
@@ -137,10 +124,7 @@ span {
   }
 }
 
-.buttonsBox{
-  text-align: center;
-}
-
+// <<<<<<<< home page left container >>>>>>>>>
 .aboutText{
   width: 75%;
   margin: 0 auto;
@@ -156,6 +140,49 @@ span {
   width: 80%;
   margin: 0 auto;
   text-align: center;
+}
+
+.logoutContainer{
+  margin-top: 20px;
+}
+
+
+// <<<<< buttons >>>>>
+
+.button {
+  border: 1px solid black;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: black;
+  margin: 5px;
+    // font-family: 'Raleway', sans-serif;
+  &.success {
+    &:hover {
+      border: 1px solid #3EA031;
+    }
+  }
+  &.authButton{
+    padding: 14px;
+    margin-top: -10px;
+  }
+  &.logoutButton{
+    padding: 13px;
+    &.cancel {
+      &:hover {
+        border: 1px solid red;
+      }
+    }
+  }
+}
+
+.voteButton{
+  padding: 3px 5px;
+}
+
+.close{
+  position: absolute;
+  top: 600px;
+  left: 270px;
 }
 
 .buttons{
@@ -175,20 +202,12 @@ a {
   color: black;
   &.button{
     font-family: 'Raleway', sans-serif;
+    width: 45px;
+    height: 45px;
   }
 }
 
-.logout{
-  margin-top: 13px;
-  // padding-top: 3px;
-}
-
-.fa-plus{
-  padding-right: 5px;
-}
-
-.close{
-  position: absolute;
-  top: 600px;
-  left: 270px;
+.buttonsBox{
+  text-align: center;
+  margin-top: 10px;
 }

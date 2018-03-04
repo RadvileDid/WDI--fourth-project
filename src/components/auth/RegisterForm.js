@@ -18,7 +18,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
           value={user.name}
           className="formInput"
         />
-        {errors.name && <p>{errors.name}</p>}
+        {errors.name && <p className="error">{errors.name}</p>}
       </div>
       <div className="form-group">
         <input
@@ -30,7 +30,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
           value={user.username}
           className="formInput"
         />
-        {errors.username && <p>{errors.username}</p>}
+        {errors.username && <p  className="error">{errors.username}</p>}
       </div>
       <div className="form-group">
         <input
@@ -42,7 +42,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
           value={user.email}
           className="formInput"
         />
-        {errors.email && <p>{errors.email}</p>}
+        {errors.email && <p  className="error">{errors.email}</p>}
       </div>
       <div className="form-group">
         <input
@@ -53,7 +53,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
           value={user.password}
           className="formInput"
         />
-        {errors.password && <p>{errors.password}</p>}
+        {errors.password && <p  className="error">{errors.password}</p>}
       </div>
       <div className="form-group">
         <input
@@ -64,6 +64,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
           value={user.passwordConfirmation}
           className="formInput"
         />
+        {errors.passwordConfirmation && <p  className="error">{errors.passwordConfirmation}</p>}
       </div>
       <div className="form-group">
         <input
@@ -74,10 +75,10 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
           value={user.profilePicture}
           className="formInput"
         />
-        {errors.profilePicture && <p>{errors.profilePicture}</p>}
+        {errors.profilePicture && <p className="error">{errors.profilePicture}</p>}
       </div>
       <div className="buttonsBox">
-        <button className="button success" disabled={formIsInvalid}>Register</button>
+        <button className="button success authButton" disabled={formIsInvalid}>Register</button>
         <BackButton />
       </div>
     </form>

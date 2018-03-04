@@ -72,9 +72,9 @@ class VideosIndex extends Component {
 
       return(
         <div key={dayGroupData._id.yymmdd} className="singleComponentBox">
-          <p>
-            Top videos from: {day}
-          </p>
+          <h2>
+            {day}
+          </h2>
           { dayGroupData && dayGroupData.videos.map(this.renderVideoListItem)}
         </div>
       );
@@ -84,7 +84,6 @@ class VideosIndex extends Component {
       <div>
         <div className="row">
           <div className="left">
-            {/* <Logout /> */}
             <div className="aboutText">
               <h2>Discover the next big start in the street dance</h2>
               <div className="slogan">help the best talent to be noticed

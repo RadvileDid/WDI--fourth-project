@@ -4,7 +4,7 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 function videosIndex(req, res, next) {
   const limitOfDays = 10;
   const tenDaysAgoDate = new Date((new Date().getTime() - (limitOfDays * DAY_MS)));
-  const maxVideosPerDay = 10;
+  const maxVideosPerDay = 5;
 
   Video.aggregate([
     {

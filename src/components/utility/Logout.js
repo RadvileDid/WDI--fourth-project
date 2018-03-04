@@ -12,8 +12,8 @@ const Logout = ({ history }) => {
   }
 
   return(
-    <div className="logout">
-      { Auth.isAuthenticated() && <a href="#" className="button cancel" onClick={logout}>Logout</a>}
+    <div className="logoutContainer">
+      { Auth.isAuthenticated() && <a href="#" className="button logoutButton cancel" onClick={logout}>Logout</a>}
     </div>
   );
 };
