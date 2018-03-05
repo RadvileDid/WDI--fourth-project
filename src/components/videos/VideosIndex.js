@@ -114,9 +114,9 @@ class VideosIndex extends Component {
             <div className="auth">
               <div className="buttons">
                 { !Auth.isAuthenticated() &&
-                   <Link to="/login" className="button">Login</Link> }
+                   <Link to="/login" className="button homePageButtons">Login</Link> }
                 { !Auth.isAuthenticated() &&
-                   <Link to="/register" className="button">Register</Link>}
+                   <Link to="/register" className="button homePageButtons">Register</Link>}
                 { Auth.isAuthenticated() &&
                   <button className="button">
                     <Link to="/new">
