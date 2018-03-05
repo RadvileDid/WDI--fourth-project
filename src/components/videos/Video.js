@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import React, { Component } from 'react';
 import youtubeThumbnail from 'youtube-thumbnail';
-import Auth from '../../lib/Auth';
+// import Auth from '../../lib/Auth';
 // import Axios from 'axios';
 
 export default class Video extends Component {
@@ -11,13 +11,16 @@ export default class Video extends Component {
   }
 
   render() {
-    const { video, upvotes } = this.props;
+    const { video, upvotes, index } = this.props;
+
     const thumbData = youtubeThumbnail(`http://youtube.com/watch?v=${video.videoId}`);
     return (
+
       <div key={video._id} className="videoBox">
         <div className="row">
+          <div className="index">#{index+ 1}</div>
           <div className="videoImageContainer">
-            <img src={thumbData.high.url} />
+            <img src={thumbData.high.url} className="croppedImage"/>
           </div>
           <div className="singleVideoRightContainer">
             <div>{video.title}</div>

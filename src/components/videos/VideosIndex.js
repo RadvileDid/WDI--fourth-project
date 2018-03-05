@@ -37,7 +37,9 @@ class VideosIndex extends Component {
       });
   }
 
-  renderVideoListItem(videoData) {
+  renderVideoListItem(videoData, index) {
+    console.log('this is index', index);
+
     return (
       <Link
         to={{
@@ -47,13 +49,13 @@ class VideosIndex extends Component {
             from: 'VideosIndex'
           }
         }} key={videoData._id}
-        className="counterListItem"
       >
         <Video
           video={videoData.video}
           upvotes={videoData.totalVotes}
           key={videoData._id}
           onUpvote={this.handleUpvote}
+          index={index}
         />
       </Link>
     );
@@ -77,7 +79,7 @@ class VideosIndex extends Component {
             {day}
           </h1>
           <div className="border"></div>
-          <div className="counter">
+          <div>
             { dayGroupData && dayGroupData.videos.map(this.renderVideoListItem)}
           </div>
         </div>

@@ -45,7 +45,7 @@ class VideosShow extends Component {
             opts={opts}
           />
         </div>
-        <Link to="/" className="button close">X
+        <Link to="/" className="button close"><i className="fas fa-times"></i>
         </Link>
       </div>
     );

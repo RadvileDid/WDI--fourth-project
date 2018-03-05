@@ -49,7 +49,7 @@ class UserShow extends React.Component {
         <div key={video._id} className="singleVideoComponentBox videoBox">
           <div className="row">
             <div className="videoImageContainer">
-              <img src={thumbData.high.url} />
+              <img src={thumbData.high.url}/>
             </div>
             <div className="rowProfile">
               <div className="profileTitle">{video.title}</div>
@@ -69,7 +69,7 @@ class UserShow extends React.Component {
         <div className="row">
           <div className="leftProfile left">
             <div>
-              <img src={this.state.user.profilePicture} />
+              <img src={this.state.user.profilePicture} className="profileImage"/>
             </div>
             <div>
               <h3>Name: <span>{this.state.user.name}</span></h3>
