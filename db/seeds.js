@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-const { dbURI } = require('../config/environment');
-mongoose.connect(dbURI, { useMongoClient: true });
+const { env, db } = require('../config/environment');
+mongoose.connect(db[env], { useMongoClient: true });
 
 const User = require('../models/user');
 const Video = require('../models/video');

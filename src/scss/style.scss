@@ -101,6 +101,7 @@ h1{
   min-width: 80px;
   max-width: 80px;
   font-size: 40px;
+  padding-left: 6px;
   color: lightGrey;
   margin-top: 80px;
   font-weight: bolder;
@@ -186,6 +187,9 @@ h1{
   text-decoration: none;
   color: black;
   background-color: rgba(255, 255, 255, 0.5);
+  &:hover{
+    background-color: rgba(255, 255, 255, 0.7);
+  }
   margin: 5px;
     // font-family: 'Raleway', sans-serif;
   &.success {
@@ -199,11 +203,6 @@ h1{
   }
   &.logoutButton{
     padding: 13px;
-    &.cancel {
-      &:hover {
-        border: 2px solid red;
-      }
-    }
   }
 }
 
