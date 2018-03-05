@@ -72,10 +72,11 @@ class VideosIndex extends Component {
       });
 
       return(
-        <div key={dayGroupData._id.yymmdd} className="singleComponentBox">
+        <div key={dayGroupData._id.yymmdd} className="allVideos">
           <h1>
             {day}
           </h1>
+          <div className="border"></div>
           <div className="counter">
             { dayGroupData && dayGroupData.videos.map(this.renderVideoListItem)}
           </div>
@@ -114,7 +115,7 @@ class VideosIndex extends Component {
               </div>
             </div>
           </div>
-          <div className="rigth">{videoNodes}</div>
+          <div className="right">{videoNodes}</div>
         </div>
       </div>
     );

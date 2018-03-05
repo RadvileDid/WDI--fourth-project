@@ -32,19 +32,34 @@ const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
           {errors.videoId && <p>{errors.videoId}</p>}
         </div>
         <div>
-          <select id="danceStyles"
-            name="danceStyles"
+          <select id="danceStyle"
+            name="danceStyle"
             onChange={handleChange}
             value={video.danceStyle}
             className="formInput"
           >
-            <option value={video.danceStyle}>Hip-hop</option>
-            <option value={video.danceStyle}>Waacking</option>
-            <option value={video.danceStyle}>Popping</option>
-            <option value={video.danceStyle}>Locking</option>
-            <option value={video.danceStyle}>B-Boy</option>
+            <option value='Hip-hop'>Hip-hop</option>
+            <option value='Waacking'>Waacking</option>
+            <option value='Popping'>Popping</option>
+            <option value='Locking'>Locking</option>
+            <option value='B-Boy'>B-Boy</option>
           </select>
         </div>
+
+        {/* <div>
+          <label htmlFor="status">Status:</label>
+          <select id="status"
+            name="status"
+            onChange={handleChange}
+            value={criminal.status}
+          >
+            <option value="" disabled>- - Please Select One - -</option>
+            <option value="Alive">Alive</option>
+            <option value="Dead">Dead</option>
+            <option value="Unknown">Unknown</option>
+          </select>
+        </div> */}
+
 
         <div className="buttonsBox">
           <button className="button" disabled={formIsInvalid}>Add</button>

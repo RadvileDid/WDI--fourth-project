@@ -46,7 +46,7 @@ class UserShow extends React.Component {
     const videoNodes = this.state.videos.map((video) => {
       const thumbData = youtubeThumbnail(`http://youtube.com/watch?v=${video.videoId}`);
       return (
-        <div key={video._id} className="singleComponentBox singleVideoComponentBox videoBox">
+        <div key={video._id} className="singleVideoComponentBox videoBox">
           <div className="row">
             <div className="videoImageContainer">
               <img src={thumbData.high.url} />
