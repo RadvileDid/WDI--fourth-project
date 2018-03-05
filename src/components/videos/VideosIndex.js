@@ -49,57 +49,6 @@ class VideosIndex extends Component {
         this.setState({ videosGroups });
       })
       .catch(err => console.log(err));
-
-
-
-
-
-    // const videosGroups = this.state.videosGroups.map(group => {
-    //   group.videos.map(video => {
-    //     if(video._id === videoId) {
-    //       video.video = { blah: 'blah'};
-    //       return video;
-    //     }
-    //
-    //     return video;
-    //   });
-    // });
-    //
-    //
-    // console.log(videosGroups);
-
-
-
-
-    // Axios
-    //   .post(`/api/videos/${videoId}/upvote`, {}, {
-    //     headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
-    //   })
-    //   .then((res) => {
-        // const videosGroups = this.state.videosGroups.map(group => {
-        //   group.videos.map(video => {
-        //     if(video._id === videoId) {
-        //       video.video = res.data;
-        //       return video;
-        //     }
-        //
-        //     return video;
-        //   });
-        // });
-
-        // this.setState({ videosGroups }, () => console.log(this.state));
-
-        // console.log(res);
-        //
-        // const video = Object.assign({} , this.state.video, { upvotes: res.data.upvotes });
-        // this.setState({ video });
-        //
-        // // this.setState(prevState => {
-        // //   const newState = prevState;
-        // //   newState.videosGroups = newState.videosGroups.map(video => video._id === videoId ? res.data : video);
-        // //   return newState;
-        // // });
-      // });
   }
 
   renderVideoListItem(videoData, index) {
