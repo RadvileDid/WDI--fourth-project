@@ -43,6 +43,13 @@ const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
             <option value="Locking">Locking</option>
             <option value="B-Boy">Break Dance</option>
             <option value="Funk">Funk</option>
+            <option value="Tutting">Tutting</option>
+            <option value="Krump">Krump</option>
+            <option value="Liquids">Liquids</option>
+            <option value="Boogaloo">Boogaloo</option>
+            <option value="Lyrical">Lyrical</option>
+            <option value="Jerkin">Jerkin</option>
+            <option value="Robot">Robot</option>
           </select>
         </div>
         <div className="buttonsBox">
