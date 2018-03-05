@@ -20,7 +20,9 @@ export default class Video extends Component {
         <div className="row">
           <div className="index">#{index+ 1}</div>
           <div className="videoImageContainer">
-            <img src={thumbData.high.url} className="croppedImage"/>
+            <div className="test">
+              <img src={thumbData.high.url}/>
+            </div>
           </div>
           <div className="singleVideoRightContainer">
             <div>{video.title}</div>
@@ -38,7 +40,7 @@ export default class Video extends Component {
                 <div>{upvotes}</div>
               </div>
             </div>
-            <div className="test">upvote</div>
+            <div className="upvotes">upvote</div>
           </div>
         </div>
       </div>
