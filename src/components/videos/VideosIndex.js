@@ -5,6 +5,7 @@ import moment from 'moment';
 
 import Video from './Video';
 import Auth from '../../lib/Auth';
+import Logout     from '../utility/Logout';
 
 class VideosIndex extends Component {
   state = {
@@ -102,10 +103,13 @@ class VideosIndex extends Component {
       <div>
         <div className="row">
           <div className="left">
+            <div className="decorationTop"></div>
             <div className="aboutText">
+              <div className="logo"></div>
               <h2>Discover the next big start in the street dance</h2>
               <div className="slogan">help the best talent to be noticed
                 worldwide</div>
+              <div className="profileBorder"></div>
               <div className="info">
                 Upload your own videos and upvote the videos
                 you like - spread the love for dance
@@ -114,20 +118,22 @@ class VideosIndex extends Component {
             <div className="auth">
               <div className="buttons">
                 { !Auth.isAuthenticated() &&
-                   <Link to="/login" className="button homePageButtons">Login</Link> }
+                   <Link to="/login" className="button homePageButtons login">login</Link> }
                 { !Auth.isAuthenticated() &&
-                   <Link to="/register" className="button homePageButtons">Register</Link>}
-                { Auth.isAuthenticated() &&
-                  <button className="button">
-                    <Link to="/new">
-                      <i className="fa fa-plus" aria-hidden="true"></i>Add video
-                    </Link>
-                  </button>}
-                { Auth.isAuthenticated() &&
-                   <Link to={`/user/${Auth.getPayload().userId}`}
-                     className="button">Profile</Link>}
+                   <Link to="/register" className="button homePageButtons register">sign up</Link>}
+                <div className="bottomText">
+                  <div className="addVideoText">Have a video to share?</div>
+                  <Link to="/new" className="addVideo button">Submit video</Link>
+                  <div className="loggedInButtons">
+                    { Auth.isAuthenticated() &&
+                       <Link to={`/user/${Auth.getPayload().userId}`}
+                         className="profile">Profile</Link>}
+                    <Logout />
+                  </div>
+                </div>
               </div>
             </div>
+            <div className="decorationBottom"></div>
           </div>
           <div className="right">{videoNodes}</div>
         </div>

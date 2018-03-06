@@ -1,5 +1,5 @@
 import React from 'react';
-import BackButton from '../utility/BackButton';
+import { Link } from 'react-router-dom';
 
 const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
 
@@ -29,9 +29,9 @@ const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
         />
         {errors.password && <p>{errors.password}</p>}
       </div>
-      <div className="buttonsBox">
-        <button className="button success authButton" disabled={formIsInvalid}>Login</button>
-        <BackButton />
+      <div className="buttonsBox loginButtons">
+        <button className="button login" disabled={formIsInvalid}>Login</button>
+        <Link to="/" className="button addVideo closeLogin"><i className="fas fa-times"></i></Link>
       </div>
     </form>
   );

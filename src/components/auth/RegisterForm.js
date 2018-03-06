@@ -1,5 +1,5 @@
 import React from 'react';
-import BackButton from '../utility/BackButton';
+import { Link } from 'react-router-dom';
 
 const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
 
@@ -7,7 +7,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
   // console.log('inside of the register form:', errors);
 
   return (
-    <form onSubmit={handleSubmit} className="formContainer register">
+    <form onSubmit={handleSubmit} className="formContainer registerForm">
       <div className="form-group">
         <input
           type="text"
@@ -77,9 +77,13 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
         />
         {errors.profilePicture && <p className="error">{errors.profilePicture}</p>}
       </div>
-      <div className="buttonsBox">
-        <button className="button success authButton register" disabled={formIsInvalid}>Register</button>
+      {/* <div className="buttonsBox">
+        <button className="button success authButton registerForm" disabled={formIsInvalid}>Register</button>
         <BackButton />
+      </div> */}
+      <div className="buttonsBox loginButtons">
+        <button className="button login" disabled={formIsInvalid}>Sign up</button>
+        <Link to="/" className="button addVideo closeLogin"><i className="fas fa-times"></i></Link>
       </div>
     </form>
   );

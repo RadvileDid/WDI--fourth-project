@@ -13,7 +13,7 @@ const Logout = ({ history }) => {
 
   return(
     <div className="logoutContainer">
-      { Auth.isAuthenticated() && <a href="#" className="button logoutButton userProfileButtons" onClick={logout}>Logout</a>}
+      { Auth.isAuthenticated() && <a href="#" className="button profile logout" onClick={logout}>Logout</a>}
     </div>
   );
 };

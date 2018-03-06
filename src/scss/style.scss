@@ -14,7 +14,7 @@ img {
 
 h1{
   font-size: 24px;
-  text-align: center;
+  margin-left: 25px;
 }
 
 h2{
@@ -22,14 +22,6 @@ h2{
 }
 
 .container{
-  margin: 0 auto;
-}
-
-.border{
-  height: 1px;
-  border-radius: 5px;
-  background-color: grey;
-  width: 85%;
   margin: 0 auto;
 }
 
@@ -51,8 +43,12 @@ h2{
 }
 
 .profileImage{
-  margin-top: -100px;
-  height: 300px;
+  height: 200px;
+  width: 200px;
+  border-radius: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .rowProfileVideos{
@@ -93,11 +89,10 @@ h2{
   width: 53%;
   padding-top: 20%;
   color: white;
-  background-color: #f29e03;
+  background-color: #C63F39;
   position: fixed;
   height: 100vh;
   width: 50%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='46' height='46' fill-opacity='0.47' fill='%23ffa61d'/%3E%3C/svg%3E");
   &.leftProfile{
     text-align: center;
   }
@@ -109,7 +104,6 @@ h2{
   font-size: 40px;
   padding-left: 6px;
   color: lightGrey;
-  margin-top: 80px;
   font-weight: bolder;
   font-family: 'Open Sans', sans-serif;
 }
@@ -140,6 +134,16 @@ h2{
   }
 }
 
+.testas{
+  background-color: black;
+  position: fixed;
+  height: 100vh;
+  width: 50%;
+  z-index: 1;
+  left: 0;
+  top:0;
+}
+
 .danceStyle{
   color: grey;
   font-style: italic;
@@ -153,13 +157,19 @@ h2{
   width: 40%;
 }
 
-.register{
-  margin-top: 10%;
+a {
+  &.button{
+    &.register{
+      margin-top: 10%;
+      padding: 9px 19px;
+    }
+  }
 }
 
 .formInput{
   width: 100%;
   border: solid 1px lightgrey;
+  border-radius: 3px;
   height: 35px;
   margin: 5px 0;
   padding-left: 7px;
@@ -171,53 +181,50 @@ h2{
 // <<<<<<<< home page left container >>>>>>>>>
 .aboutText{
   width: 75%;
-  margin: 0 auto;
+  text-align: center;
+  margin: -40px auto 0;
 }
 
 .slogan{
-  padding-bottom: 20px;
   text-align: right;
-  color: grey;
+  width: 90%;
+  font-size: 14px;
 }
 
 .info{
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   text-align: center;
 }
 
 .logoutContainer{
-  margin-top: 20px;
+  // margin-top: 20px;
 }
 
 .slogan{
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .info {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 // <<<<<<< buttons >>>>>>>>
 .button {
-  border: 2px solid grey;
-  border-radius: 5px;
+  border-radius: 3px;
+  font-size: 12px;
   padding: 10px 10px 8px;
   text-decoration: none;
+  text-transform: uppercase;
   color: black;
-  background-color: rgba(255, 255, 255, 0.5);
   &:hover{
-    background-color: rgba(255, 255, 255, 0.7);
+
   }
   margin: 5px;
-  &.success {
-    &:hover {
-      border: 2px solid #3EA031;
-    }
-  }
   &.authButton{
     height: 45px;
+    padding: 8px 20px;
   }
   &.logoutButton{
     padding: 13px;
@@ -231,6 +238,7 @@ h2{
 .close{
   position: absolute;
   position: fixed;
+  color: white;
   padding: 14px 15px;
   top: 600px;
   left: 325px;
@@ -239,7 +247,7 @@ h2{
 
 .buttons{
   margin: 40px auto;
-  width: 27%;
+  width: 30%;
 }
 
 .profileButtons{
@@ -264,14 +272,9 @@ a {
   margin-top: 10px;
 }
 
-.buttonBack{
-  position: relative;
-  top: 4px;
-  background-image: url( "data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4OC45MDIgNDg4LjkwMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg4LjkwMiA0ODguOTAyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxnPgoJPHBhdGggZD0iTTQ3OS45LDY0LjU0OWMtNS40LTEuNC0xMSwxLTEzLjgsNS44Yy02Mi4zLDEwOS44LTE3OS44LDExNS42LTI1Ni41LDExNS45di03OS41YzAtNC43LTIuNy05LjEtNy0xMS4xcy05LjQtMS40LTEzLDEuNiAgIEw0LjQsMjUwLjQ0OWMtMi44LDIuMy00LjQsNS44LTQuNCw5LjRjMCwzLjcsMS42LDcuMSw0LjUsOS40bDE4NSwxNTIuN2MyLjIsMS44LDUsMi44LDcuOCwyLjhjMS44LDAsMy42LTAuNCw1LjItMS4yICAgYzQuMy0yLDctNi4zLDctMTEuMXYtNzkuOGMxMTcuNy00LjQsMTg0LjMtNTUuNywyMTkuNy05OC44YzQ0LTUzLjUsNTkuNy0xMTYuNSw1OS43LTE1Ny42QzQ4OSw3MC44NDksNDg1LjMsNjUuOTQ5LDQ3OS45LDY0LjU0OXogICAgTTE5Ny4yLDMwOC41NDljLTYuNywwLjEtMTIuMSw1LjUtMTIuMSwxMi4zdjY1LjdsLTE1My42LTEyNi43bDE1My42LTEyNy4xdjY1LjdjMCwzLjIsMS4zLDYuNCwzLjYsOC43czUuNCwzLjYsOC43LDMuNiAgIGM3MS4zLDAsMTg0LjcsMCwyNjAuNi04Ni42QzQzOC45LDE5OS41NDksMzczLjIsMzA2Ljg0OSwxOTcuMiwzMDguNTQ5eiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=");
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 45px;
-  width: 45px;
+.backButton{
+  background-color: #C63F39;
+  border: none;
 }
 
 .register{
@@ -295,20 +298,215 @@ a {
 }
 
 .upvotesRow{
-  border: grey solid 1px;
-  width: 50px;
-  height: 50px;
-    padding: 2px 0;
+  width: 60px;
+  height: 60px;
+  padding: 8px 10px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 3px;
+  background-color: #F8D1D0;
 }
 
 .voteIconButton{
-  background-color: white;
+  padding-top: 5px;
+  background-color: #F8D1D0;
   border: none;
 }
 
 .upvotes{
-  font-size: 10px;
+  font-size: 12px;
+  font-weight: bold;
   margin: 0 10px;
+}
+
+.decorationTop {
+  background-image: url("../../images/decoration-top.svg");
+  height: 130px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  top: -50px;
+  left: 50px;
+}
+
+.decorationBottom {
+  background-image: url("../../images/decoration-bottom.svg");
+  height: 250px;
+  left: 30px;
+  width: 45%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  bottom:0;
+}
+
+
+.profileBorder{
+  height: 3px;
+  width: 90%;
+  background-color: #B3352E;
+  border-radius: 5px;
+  margin: 10px auto 15px;
+}
+
+.logo{
+  background-image: url("../../images/logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 57px;
+  width: 10%;
+  left: 280px;
+  top: 165px;
+  position: fixed;
+}
+
+.logoProfile{
+  background-image: url("../../images/logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 57px;
+  width: 10%;
+  left: 280px;
+  top: 70px;
+  position: fixed;
+}
+
+.register{
+  background-color: #57B2D4;
+}
+
+.login{
+  background-color: #B3352E;
+  color: white;
+  height: 30px;
+  padding: 9px 25px 9px;
+  position: relative;
+  top: 2px;
+}
+
+.bottomText{
+  position: absolute;
+  bottom: 60px;
+  margin: 0 auto;
+  padding: 15px;
+  z-index: 1;
+}
+
+.addVideoText{
+  padding-bottom: 30px;
+  font-size: 18px;
+  margin: 0 auto;
+}
+
+.imageCrop{
+  align-items: center;
+}
+
+.videoImageContainer{
+  width: 60%;
+  background-size: cover;
+  background-position: center center;
+  &::after {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+  }
+}
+
+
+.loggedInButtons{
+  display: flex;
+  width: 60px;
+  position: fixed;
+  top: 10px;
+  left: 490px;
+}
+
+.profile{
+  background-color: #c22625;
+  text-transform: uppercase;
+  padding: 7px 15px;
+  margin: 10px;
+  border-radius: 3px
+}
+
+
+.logout{
+  position: relative;
+  text-transform: uppercase;
+  // padding: 8px 15px;
+  top: 17px;
+  font-size: 14px;
+}
+
+.userData{
+  background-color: #B3352E;
+  width: 70%;
+  margin: -70px auto 0;
+  border-radius: 50px;
+  display: flex;
+  padding: 25px;
+  height: 250px;
+}
+
+.userText{
+  text-align: left;
+  padding: 20px;
+}
+
+.profileBack{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: green;
+}
+
+.edit{
+  position: fixed;
+  top: 230px;
+  left: 540px;
+  font-size: 26px;
+}
+
+.delete{
+  background-color: #F9D9DE;
+  border: none;
+  padding: 5px;
+}
+
+.addVideo, .login{
+  background-color: #F9D9DE;
+  border: none;
+  color: #B3352E;
+}
+
+.login{
+  padding: 10px 20px 10px;
+}
+
+div {
+  &.buttonsBox{
+    &.delete{
+      background-color: #F9D9DE;
+    }
+  }
+}
+
+.loginButtons{
+  width: 28%;
+  margin: 0 auto;
+}
+.addVideoClose{
+  width: 28%;
+  margin: 0 auto;
+}
+
+.closeLogin{
+  position: relative;
+  top: -0.5px;
+  padding: 8px 10px;
 }
