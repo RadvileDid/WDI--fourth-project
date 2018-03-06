@@ -77,10 +77,6 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
         />
         {errors.profilePicture && <p className="error">{errors.profilePicture}</p>}
       </div>
-      {/* <div className="buttonsBox">
-        <button className="button success authButton registerForm" disabled={formIsInvalid}>Register</button>
-        <BackButton />
-      </div> */}
       <div className="buttonsBox loginButtons">
         <button className="button login" disabled={formIsInvalid}>Sign up</button>
         <Link to="/" className="button addVideo closeLogin"><i className="fas fa-times"></i></Link>
