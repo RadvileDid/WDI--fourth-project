@@ -320,7 +320,8 @@ a {
 
 .decorationTop {
   background-image: url("../../images/decoration-top.svg");
-  height: 100px;
+  min-height: 100px;
+  height: 10%;
   width: 78%;
   background-repeat: no-repeat;
   background-position: center;
