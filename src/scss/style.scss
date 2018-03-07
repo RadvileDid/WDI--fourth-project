@@ -197,10 +197,6 @@ a {
   text-align: center;
 }
 
-.logoutContainer{
-  // margin-top: 20px;
-}
-
 .slogan{
   font-size: 16px;
   font-weight: bold;
@@ -334,13 +330,11 @@ a {
 .decorationBottom {
   background-image: url("../../images/decoration-bottom.svg");
   height: 250px;
-  left: 30px;
   width: 646.188px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  position: fixed;
-  bottom:0;
+  margin: 130px auto 0;
 }
 
 
@@ -359,9 +353,10 @@ a {
   background-size: cover;
   height: 57px;
   width: 143.594px;
-  left: 280px;
-  top: 165px;
+  /* left: 280px; */
+  /* top: 165px; */
   position: fixed;
+  margin: -130px auto 0;
 }
 
 .logoProfile{
@@ -522,4 +517,15 @@ div {
   position: relative;
   top: -0.5px;
   padding: 8px 10px;
+}
+
+.center{
+  width: 180px;
+  margin: 0 auto;
+}
+
+.authCenter{
+  margin-top: 30px;
+  margin: 30px auto 0;
+  width: 220px;
 }
