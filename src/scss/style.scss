@@ -316,25 +316,39 @@ a {
 
 .decorationTop {
   background-image: url("../../images/decoration-top.svg");
-  min-height: 100px;
-  height: 10%;
-  width: 1120.080px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  position: fixed;
+  position: absolute;
   top: -50px;
-  left: 50px;
+  left: 80%;
+  transform: translateX(-50%);
+  ::after {
+    content: '';
+    display: block;
+    // padding-top: 10%;
+  }
+  min-height: 100px;
+  height: 10%;
+  width: 1120.080px;
 }
 
 .decorationBottom {
   background-image: url("../../images/decoration-bottom.svg");
-  height: 250px;
-  width: 646.188px;
+  height: 25%;
+  width: 80%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  margin: 130px auto 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  ::after {
+    content: '';
+    display: block;
+    padding-top: 30%;
+  }
 }
 
 
