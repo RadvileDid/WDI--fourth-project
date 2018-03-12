@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import BackButton from '../utility/BackButton';
+
 
 
 const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
@@ -8,6 +9,7 @@ const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
 
   return (
     <div className="singleComponentBox">
+      <div className="formBackButton"><BackButton /></div>
       <form onSubmit={handleSubmit} className="formContainer">
         <div>
           <input
@@ -54,7 +56,6 @@ const AddVideoForm = ({ handleChange, handleSubmit, video, errors }) => {
         </div>
         <div className="buttonsBox">
           <button className="button addVideo" disabled={formIsInvalid}>Add</button>
-          <Link to="/" className="button addVideoClose addVideo"><i className="fas fa-times"></i></Link>
         </div>
 
       </form>

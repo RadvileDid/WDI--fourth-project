@@ -67,7 +67,7 @@ class UserShow extends React.Component {
       <div className="singleComponentBox">
         <div className="row">
           <div className="leftProfile left">
-            <div className="profileBack"><BackButton /></div>
+            <div className="profileBack profileBackButton"><BackButton /></div>
             <div className="decorationTop"></div>
             <div className="logoProfile"></div>
             <div className="userData">

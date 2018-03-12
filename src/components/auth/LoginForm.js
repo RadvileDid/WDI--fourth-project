@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import BackButton from '../utility/BackButton';
 
 const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
-
   const formIsInvalid = Object.keys(errors).some(key => errors[key]);
 
   return (
     <div>
-      <div className="profileBack"><BackButton /></div>
+      <div className="formBackButton"><BackButton /></div>
       <form onSubmit={handleSubmit} className="formContainer">
         <div className="form-group">
           <input
@@ -33,7 +32,6 @@ const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
         </div>
         <div className="buttonsBox loginButtons">
           <button className="button login" disabled={formIsInvalid}>Login</button>
-          <Link to="/" className="button addVideo closeLogin"><i className="fas fa-times"></i></Link>
         </div>
       </form>
     </div>
